@@ -1,0 +1,636 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="custom.js"></script>
+	<script type="text/javascript" src="anexos.js"></script>
+	<script type="text/javascript" src="SweetAlert.js"></script>
+	<script type="text/javascript" src="SwalAlert.js"></script>
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+	<script type="text/javascript" src="awesomplete.js" defer></script>
+	<script type="text/javascript" src="beforeSendValidate.js" defer></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.base.css" integrity="sha512-JreNkqx4723Zhvmy8TtRDue2ZbPrPIzJSjK84o3KUsjA/eKuOW3bhea06M8urMlsFS3Yj+9m3OudzqJDrk3yOQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="awesomplete.css">
+</head>
+<body>
+	<div class="fluig-style-guide">
+		<form name="form" id="form" role="form">
+			<!-- Campos Hidden -->
+			<div>
+				<!-- Informações Gerais -->
+				<input type="hidden" name="matriculaGestorArea_h" id="matriculaGestorArea_h">
+				<input type="hidden" name="matriculaSolicitante_h" id="matriculaSolicitante_h">
+				<input type="hidden" name="areaSolicitante_h" id="areaSolicitante_h">
+				<input type="hidden" name="bpRhResponsavel_h" id="bpRhResponsavel_h">
+				<input type="hidden" name="gestorImediato_h" id="gestorImediato_h">
+				<input type="hidden" name="unidade_h" id="unidade_h">
+				<input type="hidden" name="diretoria_h" id="diretoria_h">
+
+				<!-- Dados do Treinamento -->
+				<input type="hidden" name="categoria_h" id="categoria_h">
+				<input type="hidden" name="nomeTreinamento_h" id="nomeTreinamento_h">
+				<input type="hidden" name="optionRadioInterno_h" id="optionRadioInterno_h">
+				<input type="hidden" name="optionRadioExterno_h" id="optionRadioInterno_h">
+				<input type="hidden" name="optionRadioInCompany_h" id="optionRadioInCompany_h">
+				<input type="hidden" name="nomeInstituicao_h" id="nomeInstituicao_h">
+				<input type="hidden" name="contatoInstituicao_h" id="contatoInstituicao_h">
+				<input type="hidden" name="optionRadioCursoTreinamento_h" id="optionRadioCursoTreinamento_h">
+				<input type="hidden" name="optionRadioWorkshopForum_h" id="optionRadioWorkshopForum_h">
+				<input type="hidden" name="optionRadioPalestraCongresso_h" id="optionRadioPalestraCongresso_h">
+				<input type="hidden" name="inscricoes_h" id="inscricoes_h">
+				<input type="hidden" name="dataTreinamento_h" id="dataTreinamento_h">
+				<input type="hidden" name="cargaHoraria_h" id="cargaHoraria_h">
+				<input type="hidden" name="optionRadioEAD_h" id="optionRadioEAD_h">
+				<input type="hidden" name="optionRadioPresencial_h" id="optionRadioPresencial_h">
+				<input type="hidden" name="optionRadioHibrido_h" id="optionRadioHibrido_h">
+
+				<!-- Informações dos Participantes -->
+				<input type="hidden" name="escalaParticipantes_h" id="escalaParticipantes_h">
+				<input type="hidden" name="quantidadeParticipantes_h" id="quantidadeParticipantes_h">
+				<input type="hidden" name="anexo_planilhaParticipantes_h" id="anexo_planilhaParticipantes_h">
+				<input type="hidden" name="anexo_documentoNormativo_h" id="anexo_documentoNormativo_h">
+
+				<!-- Justificativa do Treinamento -->
+				<input type="hidden" name="optionradioiso_h" id="optionradioiso_h">
+				<input type="hidden" name="optionRadioAtualizacaoLei_h" id="optionRadioAtualizacaoLei_h">
+				<input type="hidden" name="optionRadioAcaoEngajamento_h" id="optionRadioAcaoEngajamento_h">
+				<input type="hidden" name="optionRadioCumprimentoMatriz_h" id="optionRadioCumprimentoMatriz_h">
+				<input type="hidden" name="optionRadioPDI_h" id="optionRadioPDI_h">
+				<input type="hidden" name="optionRadioSemFaciliador_h" id="optionRadioSemFaciliador_h">
+				<input type="hidden" name="justificativa_h" id="justificativa_h">
+				<input type="hidden" name="conteudo_programatico_h" id="conteudo_programatico_h">
+				<input type="hidden" name="programacaoEventoDescricao_h" id="programacaoEventoDescricao_h">
+				<input type="hidden" name="anexo_programacao_evento_h" id="anexo_programacao_evento_h">
+				<input type="hidden" name="anexo_conteudo_programatico_h" id="anexo_conteudo_programatico_h">
+
+				<!-- Investimento -->
+				<input type="hidden" name="optionRadioViajar_h" id="optionRadioViajar_h">
+				<input type="hidden" name="optionRadioNaoViajar_h" id="optionRadioNaoViajar_h">
+				<input type="hidden" name="optionRadioIndividual_h" id="optionRadioIndividual_h">
+				<input type="hidden" name="optionRadioEmGrupo_h" id="optionRadioEmGrupo_h">
+				<input type="hidden" name="valorPessoa_h" id="valorPessoa_h">
+				<input type="hidden" name="valorTotal_h" id="valorTotal_h">
+
+				<!-- Aprovação da BP -->
+				<input type="hidden" name="aprovarBP_h" id="aprovarBP_h">
+				<input type="hidden" name="observacaoBP_h" id="observacaoBP_h">
+
+				<!-- Aprovação da Área -->
+				<input type="hidden" name="aprovarAreaResponsavel_h" id="aprovarAreaResponsavel_h">
+				<input type="hidden" name="observacaoAreaResponsavel_h" id="observacaoAreaResponsavel_h">
+
+				<!-- Aprovação da Área após a correção -->
+				<input type="hidden" name="aprovarAreaResponsavel2_h" id="aprovarAreaResponsavel2_h">
+
+				<!-- Definição de nível de treinamento -->
+				<input type="hidden" name="resp_etapa4" id="resp_etapa4" value="1-10731">
+				<input type="hidden" name="nivelTreinamento_h" id="nivelTreinamento_h">
+				<input type="hidden" name="observacaoNivelTreinamento_h" id="observacaoNivelTreinamento_h">
+
+			</div>
+			<div class="panel panel-info" id="panel_geral">
+				<div class="panel-heading">
+					<h3 class="panel-title text-center">SOLICITAÇÃO DE TREINAMENTO</h3>
+				</div>
+				<div class="panel-body">
+					<div class="panel panel-info" id="fase_1">
+						<div class="panel-heading">
+							<h3 class="panel-title text-center">Informações Gerais</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="form-group col-sm-3">
+									<label class="control-label" for="matriculaGestorArea">Matrícula do Gestor da área <i style="color: red;">*</i></label>
+									<input class="form-control" type="text" id="matriculaGestorArea" name="matriculaGestorArea" placeholder="Ex: 1-10226" mask="0-00000">
+								</div>
+								<div class="form-group col-sm-6">
+									<label class="control-label" for="bpRhResponsavel">BP/RH Responsável <i style="color: red;">*</i></label>
+									<input class="form-control" type="text" id="bpRhResponsavel" name="bpRhResponsavel" readonly>
+								</div>
+								<div class="form-group col-sm-3">
+									<label class="control-label" for="areaSolicitante">Área solicitante <i style="color: red;">*</i></label>
+									<br>
+									<div class="controls">
+										<input class="form-control awesomplete" type="text" id="areaSolicitante" name="areaSolicitante" placeholder="Ex: Treinamentos"/>
+									</div>
+								</div>	
+							</div>
+							<div class="row">
+								<div class="form-group col-sm-3">
+									<label class="control-label" for="matriculaSolicitante">Matrícula do solicitante <i style="color: red;">*</i></label>
+									<input class="form-control" type="text" id="matriculaSolicitante" name="matriculaSolicitante" placeholder="Ex: 1-10226" mask="0-00000">
+								</div>
+								<div class="form-group col-sm-3">
+									<label class="control-label" for="gestorImediato">Nome do gestor imediato <i style="color: red;">*</i></label>
+									<input class="form-control" type="text" id="gestorImediato" name="gestorImediato" readonly>
+								</div>
+								<div class="form-group col-sm-3">
+									<label class="control-label" for="unidade">Unidade <i style="color: red;">*</i></label>
+									<input class="form-control" type="text" id="unidade" name="unidade" readonly>
+								</div>
+								<div class="form-group col-sm-3">
+									<label class="control-label" for="diretoria">Diretoria <i style="color: red;">*</i></label>
+									<input class="form-control" type="text" id="diretoria" name="diretoria" readonly>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-info" id="fase_2">
+						<div class="panel-heading">
+							<h3 class="panel-title text-center">Dados do Treinamento</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="form-group col-sm-3">
+									<label class="control-label" for="categoria">Categoria <i style="color: red;">*</i></label>
+									<select class="form-control" id="categoria" name="categoria">
+										<option value="">Selecione..</option>
+										<option value="jeito_ser">Jeito de Ser - Treinamento de Cultura</option>
+										<option value="jeito_fazer">Jeito de Fazer - Treinamento Técnico</option>
+										<option value="jeito_liderar">Jeito de Liderar - Treinamento de Gestão e Liderança</option>
+									</select>
+								</div>
+								<div class="form-group col-sm-3">
+									<label class="control-label">Origem <i style="color: red;">*</i></label>
+									<div class="radio">
+										<label class="control-label" for="optionRadioInterno" id="optionRadioInternoLbl">
+											<input type="radio" name="optionRadioOrigem" id="optionRadioInterno" value="interno">
+											Interno (baixa complexidade)
+										</label>
+									</div>
+									<div class="radio">
+										<label class="control-label" for="optionRadioExterno" id="optionRadioExternoLbl">
+											<input type="radio" name="optionRadioOrigem" id="optionRadioExterno" value="externo">
+											Externo (média complexidade)
+										</label>
+									</div>
+									<div class="radio">
+										<label class="control-label" for="optionRadioInCompany" id="optionRadioIncompanyLbl">
+											<input type="radio" name="optionRadioOrigem" id="optionRadioInCompany" value="inCompany">
+											In Company (alta complexidade)
+										</label>
+									</div>
+								</div>
+								<div class="form-group col-sm-3">
+									<label class="control-label">Tipo <i style="color: red;">*</i></label>
+									<div class="radio">
+										<label class="control-label" for="optionRadioCursoTreinamento" id="optionRadioCursoTreinamentoLbl">
+											<input type="radio" name="optionRadioTipo" id="optionRadioCursoTreinamento" value="cursoTreinamento">
+											Curso/Treinamento
+										</label>
+									</div>
+									<div class="radio">
+										<label class="control-label" for="optionRadioWorkshopForum" id="optionRadioWorkshopForumLbl">
+											<input type="radio" name="optionRadioTipo" id="optionRadioWorkshopForum" value="workshopForum">
+											Workshop/Fórum
+										</label>
+									</div>
+									<div class="radio">
+										<label class="control-label" for="optionRadioPalestraCongresso" id="optionRadioPalestraCongressoLbl">
+											<input type="radio" name="optionRadioTipo" id="optionRadioPalestraCongresso" value="palestraCongresso">
+											Palestra/Congresso
+										</label>
+									</div>
+								</div>
+								<div class="form-group col-sm-3">
+									<label class="control-label">Modelo <i style="color: red;">*</i></label>
+									<div class="radio">
+										<label class="control-label" for="optionRadioEAD" id="optionRadioEADLbl">
+											<input type="radio" name="optionRadioModelo" id="optionRadioEAD" value="ead">
+											EAD
+										</label>
+									</div>
+									<div class="radio">
+										<label class="control-label" for="optionRadioPresencial" id="optionRadioPresencialLbl">
+											<input type="radio" name="optionRadioModelo" id="optionRadioPresencial" value="presencial">
+											Presencial
+										</label>
+									</div>
+									<div class="radio">
+										<label class="control-label" for="optionRadioHibrido" id="optionRadioHibridoLbl">
+											<input type="radio" name="optionRadioModelo" id="optionRadioHibrido" value="hibrido">
+											Híbrido
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group col-sm-4">
+									<label class="control-label" for="nomeTreinamento">Nome do treinamento <i style="color: red;">*</i></label>
+									<input class="form-control" type="text" id="nomeTreinamento" name="nomeTreinamento" placeholder="Ex: Treinamento de gestão de processos">
+								</div>
+								<div class="form-group col-sm-4">
+									<label class="control-label" for="nomeInstituicao">Nome da instituição <i style="color: red;">*</i></label>
+									<input class="form-control" type="text" id="nomeInstituicao" name="nomeInstituicao" placeholder="Ex: MIT">
+								</div>
+								<div class="form-group col-sm-4">
+									<label class="control-label" for="contatoInstituicao">Contato da instituição <i style="color: red;">*</i></label>
+									<input class="form-control" type="text" id="contatoInstituicao" name="contatoInstituicao" placeholder="Link do site oficial, rede social ou telefone para contato">
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group col-sm-4">
+									<label class="control-label" for="inscricoes">Inscrições até: <i style="color: red;">*</i></label>
+									<input class="form-control" type="text" id="inscricoes" name="inscricoes" placeholder="Ex: 25/03/2024" mask="00/00/0000">
+								</div>
+								<div class="form-group col-sm-4">
+									<label class="control-label" for="dataTreinamento">Data do treinamento <i style="color: red;">*</i></label>
+									<input class="form-control" type="text" id="dataTreinamento" name="dataTreinamento" placeholder="Ex: 15/04/2024" mask="00/00/0000">
+								</div>
+								<div class="form-group col-sm-4">
+									<label class="control-label" for="cargaHoraria">Carga horária <i style="color: red;">*</i></label>
+									<input class="form-control" type="text" id="cargaHoraria" name="cargaHoraria" placeholder="Ex: 15 horas">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-info" id="fase_3">
+						<div class="panel-heading">
+							<h3 class="panel-title text-center">Informações dos Participantes</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="alert alert-warning" role="alert">
+									<strong>O preenchimento de participantes será feito via formulário apenas caso o número máximo de participantes seja 5. Caso a quantidade seja maior, deve ser anexada uma planilha de participantes. </strong>
+									<div class="btn-group">
+										<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+										Clique aqui <span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu" role="menu">
+											<li><a href="" class="link-modelo-planilha-participante" target="_blank">Planilha Modelo de Participantes</a></li>
+											<li><a href="" class="link-modelo-planilha-normativo" target="_blank">Planilha Modelo de Normativo</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group col-sm-3">
+									<label for="escalaParticipantes" class="control-label">Escala de participantes <i style="color: red;">*</i></label>
+									<select class="form-control" id="escalaParticipantes" name="escalaParticipantes">
+										<option value="">Selecione...</option>
+										<option value="maisCincoParticipantes">Mais de 5 participantes</option>
+										<option value="menosCincoParticipantes">Menos de 5 participantes</option>
+									</select>
+								</div>
+								<div class="form-group col-sm-2" id="divAdicionarParticipantes" style="display: none;">
+									<label class="control-label">Quantidade de participantes: <span id="quantidadeParticipantes">0</span></label>
+									<button id="adicionarParticipante" class="btn btn-success btn-block" onclick="adicionarLinha();"><i class="flaticon flaticon-circle-plus icon-xs" aria-hidden="true"></i> Adicionar Participante</button>
+								</div>
+								<div class="form-group col-sm-2" id="divRemoverParticipantes" style="display: none;">
+									<label class="control-label">Quantidade máxima: 5</label>
+									<button id="removerTodosParticipante" class="btn btn-danger btn-block" onclick="excluirTodasLinhas();"><i class="flaticon flaticon-cancel icon-xs" aria-hidden="true"></i> Remover Todos</button>
+								</div>
+								<div class="form-group col-sm-2" id="divAdicionarPlanilhaParticipantes" style="display: none;">
+									<label class="control-label" for="planilhaParticipantes">Planilha de participantes <i style="color: red;">*</i></label>
+									<div class="componentAnexo">
+										<div class="input-group">
+											<input type="hidden" id="anexo_planilhaParticipantes" class="descAnexo" name="anexo_planilhaParticipantes" value="Planilha de participantes" />
+											<input type="text" id="planilhaParticipantes" name="planilhaParticipantes" class="form-control inputAnexo input-sm" placeholder="Selecione um arquivo" readonly />
+										</div>
+										<div class="icones">
+											<button type="button" id="excluirplanilhaParticipantes" class="btnUpFile btn btn-success btn-sm" data-acao="upload" onclick="anexo(event)" title="Selecionar">
+												<i class="fluigicon fluigicon-file-upload icon-sm"></i>
+											</button>
+											<button style="display: none;" type="button" class="btnViewerFile btn btn-info btn-sm" data-acao="viewer" onclick="anexo(event)" title="Visualizar" disabled>
+												<i class="fluigicon fluigicon-eye-open icon-sm"></i>
+											</button>
+											<button style="display: none;" type="button" class="btnDownloadFile btn btn-info btn-sm" data-acao="download" onclick="anexo(event)" title="Download" disabled>
+												<i class="fluigicon fluigicon-download icon-sm"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="form-group col-sm-2" id="divAdicionarDocumentoNormativo" style="display: none;">
+									<label class="control-label" for="documentoNormativo">Documento normativo <i style="color: red;">*</i></label>
+									<div class="componentAnexo">
+										<div class="input-group">
+											<input type="hidden" id="anexo_documentoNormativo" class="descAnexo" name="anexo_documentoNormativo" value="Documento Normativo" />
+											<input type="text" id="documentoNormativo" name="documentoNormativo" class="form-control inputAnexo input-sm" placeholder="Selecione um arquivo" readonly />
+										</div>
+										<div class="icones">
+											<button type="button" id="excluirdocumentoNormativo" class="btnUpFile btn btn-success btn-sm" data-acao="upload" onclick="anexo(event)" title="Selecionar">
+												<i class="fluigicon fluigicon-file-upload icon-sm"></i>
+											</button>
+											<button style="display: none;" type="button" class="btnViewerFile btn btn-info btn-sm" data-acao="viewer" onclick="anexo(event)" title="Visualizar" disabled>
+												<i class="fluigicon fluigicon-eye-open icon-sm"></i>
+											</button>
+											<button style="display: none;" type="button" class="btnDownloadFile btn btn-info btn-sm" data-acao="download" onclick="anexo(event)" title="Download" disabled>
+												<i class="fluigicon fluigicon-download icon-sm"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<table tablename="TBPART" name="TBPART" class="table table-striped" id="TBPART" nodeletebutton="true" noaddbutton="true">
+									<thead>
+										<tr>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody id="TBPART_tbody">
+										<tr>
+											<td id="TBPART_linha">
+												<div class="row">
+													<div class="form-group col-sm-3">
+														<label class="control-label" for="indiceParticipantes">Índice <i style="color: red;">*</i></label>
+														<input class="form-control" type="text" id="indiceParticipantes" name="indiceParticipantes" readonly>
+													</div>
+													<div class="form-group col-sm-3">
+														<label class="control-label" for="matriculaParticipante">Matrícula do participante <i style="color: red;">*</i></label>
+														<input class="form-control" type="text" id="matriculaParticipante" name="matriculaParticipante" placeholder="Ex: 1-10226" mask="0-00000">
+													</div>
+													<div class="form-group col-sm-3">
+														<label class="control-label" for="nomeParticipante">Nome do participante <i style="color: red;">*</i></label>
+														<input class="form-control" type="text" id="nomeParticipante" name="nomeParticipante" readonly>
+													</div>
+													<div class="form-group col-sm-3">
+														<label class="control-label" for="cargo">Cargo <i style="color: red;">*</i></label>
+														<input class="form-control" type="text" id="cargo" name="cargo" readonly>
+													</div>
+												</div>
+												<div class="row">
+													<div class="form-group col-sm-3">
+														<label class="control-label" for="dataAdmissao">Data de admissão <i style="color: red;">*</i></label>
+														<input class="form-control" type="text" id="dataAdmissao" name="dataAdmissao" mask="00/00/0000" readonly>
+													</div>
+													<div class="form-group col-sm-3">
+														<label class="control-label" for="situacao">Situação <i style="color: red;">*</i></label>
+														<input class="form-control" type="text" id="situacao" name="situacao" readonly>
+													</div>
+													<div class="form-group col-sm-3">
+														<label class="control-label" for="tempoEmpresa">Tempo de empresa <i style="color: red;">*</i></label>
+														<input class="form-control" type="text" id="tempoEmpresa" name="tempoEmpresa" readonly>
+													</div>
+													<div class="form-group col-sm-3">
+														<label class="control-label" for="ultimaADC">Nota última ADC <i style="color: red;">*</i></label>
+														<input class="form-control" type="text" id="ultimaADC" name="ultimaADC" placeholder="Ex: Última ADC">
+													</div>
+												</div>
+												<div class="row">
+													<div class="form-group col-sm-9">
+														<label class="control-label" for="aderenciaSaber">Aderência Plataforma SABER <i style="color: red;">*</i></label>
+														<textarea class="form-control" name="aderenciaSaber" id="aderenciaSaber" rows="8" placeholder="Ex: Uso recorrente da plataforma SABER para cursos técnicos"></textarea>
+													</div>
+													<div class="form-group col-sm-3">
+														<label class="control-label" for="pdi">PDI <i style="color: red;">*</i></label>
+														<input class="form-control" type="text" id="pdi" name="pdi" placeholder="Ex: PDI">
+													</div>
+												</div>
+												<div class="row">
+													<div class="form-group col-sm-2">
+														<button id="removerParticipante" class="btn btn-danger btn-block" onclick="excluirLinha(this);"><i class="flaticon flaticon-cancel icon-xs" aria-hidden="true"></i> Remover Participante</button>
+													</div>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-info" id="fase_4">
+						<div class="panel-heading">
+							<h3 class="panel-title text-center">Justificativa de Treinamento</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="form-group col-sm-6">
+									<label class="control-label">Requisitos <i style="color: red;">*</i></label>
+									<br>
+									<div class="radio-inline">
+										<label class="control-label" for="optionRadioISO" id="optionRadioISOLbl">
+											<input type="radio" name="optionRadioRequisitos" id="optionRadioISO" value="iso">Exigência ISO
+										</label>
+									</div>
+									<br>
+									<div class="radio-inline">
+										<label class="control-label" for="optionRadioAtualizacaoLei" id="optionRadioAtualizacaoLeiLbl">
+											<input type="radio" name="optionRadioRequisitos" id="optionRadioAtualizacaoLei" value="atualizacaoLei">Atualização de lei
+										</label>
+									</div>
+									<br>
+									<div class="radio-inline">
+										<label class="control-label" for="optionRadioAcaoEngajamento" id="optionRadioAcaoEngajamentoLbl">
+											<input type="radio" name="optionRadioRequisitos" id="optionRadioAcaoEngajamento" value="acaoEngajamento">Ação de engajamento
+										</label>
+									</div>
+									<br>
+									<div class="radio-inline">
+										<label class="control-label" for="optionRadioCumprimentoMatriz" id="optionRadioCumprimentoMatrizLbl">
+											<input type="radio" name="optionRadioRequisitos" id="optionRadioCumprimentoMatriz" value="cumprimentoMatriz">Cumprimento de matriz da função
+										</label>
+									</div>
+									<br>
+									<div class="radio-inline">
+										<label class="control-label" for="optionRadioPDI" id="optionRadioPDILbl">
+											<input type="radio" name="optionRadioRequisitos" id="optionRadioPDI" value="pdi">Previsto como ação no PDI
+										</label>
+									</div>
+									<br>
+									<div class="radio-inline">
+										<label class="control-label" for="optionRadioSemFaciliador" id="optionRadioSemFaciliadorLbl">
+											<input type="radio" name="optionRadioRequisitos" id="optionRadioSemFaciliador" value="semFaciliador">Não existe facilitador interno que possui conhecimento no assunto abordado
+										</label>
+									</div>
+								</div>
+								<div class="form-group col-sm-6">
+									<label class="control-label" for="justificativa">Justificativa <i style="color: red;">*</i></label>
+									<textarea class="form-control" type="text" id="justificativa" name="justificativa" rows="8" placeholder="Ex: Ganhos para a área, resultados esperados com o treinamento e indicadores impactados"></textarea>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group col-sm-6">
+									<label class="control-label" for="conteudoProgramaticoDescricao">Conteúdo Programático <i style="color: red;">*</i></label>
+									<textarea class="form-control" type="text" id="conteudoProgramaticoDescricao" name="conteudoProgramaticoDescricao" rows="8" placeholder="Ex: Incluir Programação"></textarea>
+									<div class="componentAnexo">
+										<div class="input-group">
+											<input type="hidden" id="anexo_conteudo_programatico" class="descAnexo" name="anexo_conteudo_programatico" value="Doc. Conteúdo Programático" />
+											<input type="text" id="conteudo_programatico" name="conteudo_programatico" class="form-control inputAnexo input-sm" style="display: none;" placeholder="Selecione um arquivo" readonly />
+										</div>
+										<div class="icones">
+											<button type="button" id="excluirconteudo_programatico" class="btnUpFile btn btn-success btn-sm" data-acao="upload" onclick="anexo(event)" title="Selecionar">
+												<i class="fluigicon fluigicon-file-upload icon-sm"></i>
+											</button>
+											<button style="display: none;" type="button" class="btnViewerFile btn btn-info btn-sm" data-acao="viewer" onclick="anexo(event)" title="Visualizar" disabled>
+												<i class="fluigicon fluigicon-eye-open icon-sm"></i>
+											</button>
+											<button style="display: none;" type="button" class="btnDownloadFile btn btn-info btn-sm" data-acao="download" onclick="anexo(event)" title="Download" disabled>
+												<i class="fluigicon fluigicon-download icon-sm"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="form-group col-sm-6">
+									<label class="control-label" for="programacaoEventoDescricao">Programação do evento <i style="color: red;">*</i></label>
+									<textarea class="form-control" type="text" id="programacaoEventoDescricao" name="programacaoEventoDescricao" rows="8" placeholder="Descrever a programação do evento"></textarea>
+									<div class="componentAnexo">
+										<div class="input-group">
+											<input type="hidden" id="anexo_programacao_evento" class="descAnexo" name="anexo_programacao_evento" value="Doc. Programação do Evento" />
+											<input type="text" id="programacao_evento" name="programacao_evento" class="form-control inputAnexo input-sm" style="display: none;" placeholder="Selecione um arquivo" readonly />
+										</div>
+										<div class="icones">
+											<button type="button" id="excluirdocumentos_processo" class="btnUpFile btn btn-success btn-sm" data-acao="upload" onclick="anexo(event)" title="Selecionar">
+												<i class="fluigicon fluigicon-file-upload icon-sm"></i>
+											</button>
+											<button style="display: none;" type="button" class="btnViewerFile btn btn-info btn-sm" data-acao="viewer" onclick="anexo(event)" title="Visualizar" disabled>
+												<i class="fluigicon fluigicon-eye-open icon-sm"></i>
+											</button>
+											<button style="display: none;" type="button" class="btnDownloadFile btn btn-info btn-sm" data-acao="download" onclick="anexo(event)" title="Download" disabled>
+												<i class="fluigicon fluigicon-download icon-sm"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-info" id="fase_5">
+						<div class="panel-heading">
+							<h3 class="panel-title text-center">Investimento</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="form-group col-sm-3">
+									<label class="control-label">Necessário viajar? <i style="color: red;">*</i></label>
+									<br>
+									<div class="radio-inline">
+										<label class="control-label" for="optionRadioViajar" id="optionRadioViajarLbl">
+											<input type="radio" name="optionRadioViagem" id="optionRadioViajar" value="viajar">Sim
+										</label>
+									</div>
+									<br>
+									<div class="radio-inline">
+										<label class="control-label" for="optionRadioNaoViajar" id="optionRadioNaoViajarLbl">
+											<input type="radio" name="optionRadioViagem" id="optionRadioNaoViajar" value="naoViajar">Não
+										</label>
+									</div>
+								</div>
+								<div class="form-group col-sm-3">
+									<label class="control-label">Especificação: <i style="color: red;">*</i></label>
+									<br>
+									<div class="radio-inline">
+										<label class="control-label" for="optionRadioIndividual" id="optionRadioIndividualLbl">
+											<input type="radio" name="optionRadioEspecificacao" id="optionRadioIndividual" value="individual">Individual
+										</label>
+									</div>
+									<br>
+									<div class="radio-inline">
+										<label class="control-label" for="optionRadioEmGrupo" id="optionRadioEmGrupoLbl">
+											<input type="radio" name="optionRadioEspecificacao" id="optionRadioEmGrupo" value="emGrupo">Em grupo
+										</label>
+									</div>
+								</div>
+								<div class="form-group col-sm-3">
+									<label class="control-label" for="valorPessoa">Valor por pessoa <i style="color: red;">*</i></label>
+									<input class="form-control" type="text" id="valorPessoa" name="valorPessoa" placeholder="Ex: 50,00">
+								</div>
+								<div class="form-group col-sm-3">
+									<label class="control-label" for="valorTotal">Valor total <i style="color: red;">*</i></label>
+									<input class="form-control" type="text" id="valorTotal" name="valorTotal" placeholder="Ex: 500,00">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-info" id="fase_6">
+						<div class="panel-heading">
+							<h3 class="panel-title text-center">Aprovação - BP</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="form-group col-sm-4">
+									<label class="control-label" for="aprovarBP">Aprovação <i style="color: red;">*</i></label>
+									<select class="form-control" name="aprovarBP" id="aprovarBP">
+										<option value="">Selecione..</option>
+										<option value="aprovadoBP">Aprovado</option>
+										<option value="negadoBP">Negado</option>
+										<option value="necessitaAjustesBP">Necessita de ajustes</option>
+									</select>
+								</div>
+								<div class="form-group col-sm-8">
+									<label class="control-label" for="observacaoBP">Observações <i style="color: red;">*</i></label>
+									<textarea class="form-control" name="observacaoBP" id="observacaoBP" rows="8" placeholder="Ex: Descrever parecer ou justificativa de aprovação"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-info" id="fase_7">
+						<div class="panel-heading">
+							<h3 class="panel-title text-center">Aprovação - Área Responsável</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="form-group col-sm-4">
+									<label class="control-label" for="aprovarAreaResponsavel">Aprovação <i style="color: red;">*</i></label>
+									<select class="form-control" name="aprovarAreaResponsavel" id="aprovarAreaResponsavel">
+										<option value="">Selecione..</option>
+										<option value="aprovadoAreaResponsavel">Aprovado</option>
+										<option value="negadoAreaResponsavel">Negado</option>
+										<option value="necessitaAjustesAreaResponsavel">Necessita de ajustes</option>
+									</select>
+								</div>
+								<div class="form-group col-sm-8">
+									<label class="control-label" for="observacaoAreaResponsavel">Observações <i style="color: red;">*</i></label>
+									<textarea class="form-control" name="observacaoAreaResponsavel" id="observacaoAreaResponsavel" rows="8" placeholder="Ex: Descrever parecer ou justificativa de aprovação"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-info" id="fase_8">
+						<div class="panel-heading">
+							<h3 class="panel-title text-center">Definição de nível de treinamento</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="form-group col-sm-4">
+									<label class="control-label" for="nivelTreinamento">Nível de Treinamento <i style="color: red;">*</i></label>
+									<select class="form-control" name="nivelTreinamento" id="nivelTreinamento">
+										<option value="">Selecione..</option>
+										<option value="treinamentoTecnico">Treinamento Técnico</option>
+										<option value="treinamentoCultura">Treinamento de Cultura</option>
+										<option value="treinamentoLideranca">Treinamento de Liderança</option>
+									</select>
+								</div>
+								<div class="form-group col-sm-8">
+									<label class="control-label" for="observacaoNivelTreinamento">Observações <i style="color: red;">*</i></label>
+									<textarea class="form-control" name="observacaoNivelTreinamento" id="observacaoNivelTreinamento" rows="8" placeholder="Ex: Descrever parecer..."></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-info" id="fase_9">
+						<div class="panel-heading">
+							<h3 class="panel-title text-center">[NOTIFICAÇÃO DA ÁREA] Correção de erros</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="form-group col-sm-4">
+									<label class="control-label" for="envioCorrecao">Enviar novamente <i style="color: red;">*</i></label>
+									<select class="form-control" name="envioCorrecao" id="envioCorrecao">
+										<option value="">Selecione..</option>
+										<option value="novaNotificacao">Sim</option>
+										<option value="naoNotificar">Não</option>
+									</select>
+								</div>
+								<div class="form-group col-sm-8">
+									<label class="control-label" for="envioCorrecaoObservacao">Observações <i style="color: red;">*</i></label>
+									<textarea class="form-control" name="envioCorrecaoObservacao" id="envioCorrecaoObservacao" rows="8" placeholder="Ex: Nova tentativa de notificação..."></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+					</div>
+					<!-- Campos auxiliares -->
+					<input type="hidden" name="numAtividade" id="numAtividade">
+					<input type="hidden" name="qtd_participantes" id="qtd_participantes" value="0">
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.min.js" integrity="sha512-HcBl0GSJvt4Qecm4srHapirUx0HJDi2zYXm6KUKNNUGdTIN9cBwakVZHWmRVj4MKgy1AChqhWGYcMDbRKgO0zg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>					
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
