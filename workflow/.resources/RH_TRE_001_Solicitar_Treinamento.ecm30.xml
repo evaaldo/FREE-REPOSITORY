@@ -2,14 +2,14 @@
   <ProcessDefinition>
     <processDefinitionPK>
       <companyId>1</companyId>
-      <processId>Solicitacao_Curso</processId>
+      <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
     </processDefinitionPK>
-    <processDescription>Solicitacao_Curso</processDescription>
+    <processDescription>RH - SOLICITAÇÃO DE TREINAMENTO</processDescription>
     <instruction></instruction>
     <active>true</active>
-    <publicProcess>false</publicProcess>
+    <publicProcess>true</publicProcess>
     <volumeId>Default</volumeId>
-    <categoryId></categoryId>
+    <categoryId>RECURSOS HUMANOS.TREINAMENTOS</categoryId>
     <managerEngineAllocationId></managerEngineAllocationId>
     <snapshotFrequency>0</snapshotFrequency>
     <baseDay>0</baseDay>
@@ -27,11 +27,11 @@
   <ProcessDefinitionVersion>
     <processDefinitionVersionPK>
       <companyId>1</companyId>
-      <processId>Solicitacao_Curso</processId>
-      <version>22</version>
+      <processId>RH - SOLICITAÇÃO DE TREINAMENTO</processId>
+      <version>1</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
-    <formId>9590024</formId>
+    <formId>0</formId>
     <editionMode>true</editionMode>
     <updateAttachmentsVersion>false</updateAttachmentsVersion>
     <controlsAttachmentsSecurity>false</controlsAttachmentsSecurity>
@@ -49,7 +49,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>7</sequence>
       </processStatePK>
@@ -99,7 +99,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>8</sequence>
       </processStatePK>
@@ -151,7 +151,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>10</sequence>
       </processStatePK>
@@ -203,7 +203,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>49</sequence>
       </processStatePK>
@@ -253,7 +253,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>53</sequence>
       </processStatePK>
@@ -304,12 +304,12 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>58</sequence>
       </processStatePK>
-      <stateName>CORRIGIR DE INFORMAÇÕES</stateName>
-      <stateDescription>CORRIGIR DE INFORMAÇÕES</stateDescription>
+      <stateName>CORREÇÃO DE ERROS</stateName>
+      <stateDescription>CORREÇÃO DE ERROS</stateDescription>
       <instruction></instruction>
       <deadlineTime>0</deadlineTime>
       <deadlineFieldName></deadlineFieldName>
@@ -356,12 +356,12 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>61</sequence>
       </processStatePK>
-      <stateName>CORRIGIR DE INFORMAÇÕES</stateName>
-      <stateDescription>CORRIGIR DE INFORMAÇÕES</stateDescription>
+      <stateName>CORRIGIR INFORMAÇÕES</stateName>
+      <stateDescription>CORRIGIR INFORMAÇÕES</stateDescription>
       <instruction></instruction>
       <deadlineTime>0</deadlineTime>
       <deadlineFieldName></deadlineFieldName>
@@ -408,12 +408,12 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>64</sequence>
       </processStatePK>
-      <stateName>CORRIGIR DE INFORMAÇÕES</stateName>
-      <stateDescription>CORRIGIR DE INFORMAÇÕES</stateDescription>
+      <stateName>CORRIGIR INFORMAÇÕES</stateName>
+      <stateDescription>CORRIGIR INFORMAÇÕES</stateDescription>
       <instruction></instruction>
       <deadlineTime>0</deadlineTime>
       <deadlineFieldName></deadlineFieldName>
@@ -460,7 +460,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>57</sequence>
       </processStatePK>
@@ -507,7 +507,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>78</sequence>
       </processStatePK>
@@ -554,7 +554,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>80</sequence>
       </processStatePK>
@@ -601,7 +601,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>82</sequence>
       </processStatePK>
@@ -648,7 +648,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>84</sequence>
       </processStatePK>
@@ -695,7 +695,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>12</sequence>
       </processStatePK>
@@ -720,7 +720,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>46</sequence>
       </processStatePK>
@@ -745,7 +745,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>14</sequence>
       </processStatePK>
@@ -792,7 +792,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>55</sequence>
       </processStatePK>
@@ -841,9 +841,9 @@
     <ConditionProcessState>
       <conditionProcessStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <expressionOrder>1</expressionOrder>
-        <version>22</version>
+        <version>1</version>
         <sequence>12</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovarBP&apos;) == &apos;aprovadoBP&apos;</condition>
@@ -853,9 +853,9 @@
     <ConditionProcessState>
       <conditionProcessStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <expressionOrder>2</expressionOrder>
-        <version>22</version>
+        <version>1</version>
         <sequence>12</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovarBP&apos;) == &apos;negadoBP&apos;</condition>
@@ -865,9 +865,9 @@
     <ConditionProcessState>
       <conditionProcessStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <expressionOrder>3</expressionOrder>
-        <version>22</version>
+        <version>1</version>
         <sequence>12</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovarBP&apos;) == &apos;necessitaAjustesBP&apos;</condition>
@@ -877,9 +877,9 @@
     <ConditionProcessState>
       <conditionProcessStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <expressionOrder>1</expressionOrder>
-        <version>22</version>
+        <version>1</version>
         <sequence>46</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovarAreaResponsavel&apos;) == &apos;aprovadoAreaResponsavel&apos;</condition>
@@ -889,9 +889,9 @@
     <ConditionProcessState>
       <conditionProcessStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <expressionOrder>2</expressionOrder>
-        <version>22</version>
+        <version>1</version>
         <sequence>46</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovarAreaResponsavel&apos;) == &apos;negadoAreaResponsavel&apos;</condition>
@@ -901,9 +901,9 @@
     <ConditionProcessState>
       <conditionProcessStatePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <expressionOrder>3</expressionOrder>
-        <version>22</version>
+        <version>1</version>
         <sequence>46</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovarAreaResponsavel&apos;) == &apos;necessitaAjustesAreaResponsavel&apos;</condition>
@@ -915,7 +915,7 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <linkSequence>9</linkSequence>
       </processLinkPK>
@@ -932,7 +932,7 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <linkSequence>15</linkSequence>
       </processLinkPK>
@@ -949,7 +949,7 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <linkSequence>42</linkSequence>
       </processLinkPK>
@@ -966,7 +966,7 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <linkSequence>44</linkSequence>
       </processLinkPK>
@@ -983,7 +983,7 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <linkSequence>47</linkSequence>
       </processLinkPK>
@@ -1000,7 +1000,7 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <linkSequence>48</linkSequence>
       </processLinkPK>
@@ -1017,7 +1017,7 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <linkSequence>50</linkSequence>
       </processLinkPK>
@@ -1034,7 +1034,7 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <linkSequence>56</linkSequence>
       </processLinkPK>
@@ -1051,7 +1051,7 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <linkSequence>59</linkSequence>
       </processLinkPK>
@@ -1068,7 +1068,7 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <linkSequence>60</linkSequence>
       </processLinkPK>
@@ -1085,7 +1085,7 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <linkSequence>62</linkSequence>
       </processLinkPK>
@@ -1102,7 +1102,7 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <linkSequence>65</linkSequence>
       </processLinkPK>
@@ -1119,7 +1119,7 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <linkSequence>79</linkSequence>
       </processLinkPK>
@@ -1136,7 +1136,7 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <linkSequence>81</linkSequence>
       </processLinkPK>
@@ -1153,7 +1153,7 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <linkSequence>83</linkSequence>
       </processLinkPK>
@@ -1170,7 +1170,7 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <linkSequence>85</linkSequence>
       </processLinkPK>
@@ -1187,7 +1187,7 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <linkSequence>86</linkSequence>
       </processLinkPK>
@@ -1204,7 +1204,7 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <linkSequence>87</linkSequence>
       </processLinkPK>
@@ -1220,7 +1220,7 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <linkSequence>88</linkSequence>
       </processLinkPK>
@@ -1240,7 +1240,7 @@
       <workflowProcessEventPK>
         <companyId>1</companyId>
         <eventId>servicetask53</eventId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
       </workflowProcessEventPK>
       <eventDescription>function servicetask53(attempt, message) {&#xd;
@@ -1285,7 +1285,7 @@
       <parentSequence>0</parentSequence>
       <swimLanePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>1</sequence>
       </swimLanePK>
@@ -1301,7 +1301,7 @@
       <parentSequence>1</parentSequence>
       <swimLanePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>2</sequence>
       </swimLanePK>
@@ -1317,7 +1317,7 @@
       <parentSequence>1</parentSequence>
       <swimLanePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>3</sequence>
       </swimLanePK>
@@ -1333,7 +1333,7 @@
       <parentSequence>1</parentSequence>
       <swimLanePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>4</sequence>
       </swimLanePK>
@@ -1349,7 +1349,7 @@
       <parentSequence>1</parentSequence>
       <swimLanePK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <version>1</version>
         <sequence>5</sequence>
       </swimLanePK>
@@ -1361,8 +1361,8 @@
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
-        <version>22</version>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
+        <version>1</version>
         <linkSequence>60</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1372,8 +1372,8 @@
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
-        <version>22</version>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
+        <version>1</version>
         <linkSequence>60</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1383,8 +1383,8 @@
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
-        <processId>Solicitacao_Curso</processId>
-        <version>22</version>
+        <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
+        <version>1</version>
         <linkSequence>65</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1398,7 +1398,7 @@
   <list>
     <ProcessStateService>
       <companyId>1</companyId>
-      <processId>Solicitacao_Curso</processId>
+      <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
       <version>1</version>
       <sequence>53</sequence>
       <attempts>0</attempts>

@@ -22,7 +22,7 @@
      <string>aprovarDocumentacao</string>
     </void>
     <void index="3">
-     <string>cargo</string>
+     <string>tbParticipanteCargo</string>
     </void>
     <void index="4">
      <string>correcao</string>
@@ -18322,7 +18322,7 @@
    <string>camposFormulario, documentoId = 9590024</string>
    <array class="java.lang.String" length="103">
     <void index="0">
-     <string>aderenciaSaber</string>
+     <string>tbParticipanteAderenciaSaber</string>
     </void>
     <void index="1">
      <string>anexo_conteudo_programatico</string>
@@ -18379,7 +18379,7 @@
      <string>cargaHoraria_h</string>
     </void>
     <void index="19">
-     <string>cargo</string>
+     <string>tbParticipanteCargo</string>
     </void>
     <void index="20">
      <string>categoria</string>
@@ -18403,7 +18403,7 @@
      <string>conteudoProgramaticoDescricao</string>
     </void>
     <void index="27">
-     <string>dataAdmissao</string>
+     <string>tbParticipanteAdmissao</string>
     </void>
     <void index="28">
      <string>dataTreinamento</string>
@@ -18433,7 +18433,7 @@
      <string>gestorImediato_h</string>
     </void>
     <void index="37">
-     <string>indiceParticipantes</string>
+     <string>tbParticipanteIndice</string>
     </void>
     <void index="38">
      <string>inscricoes</string>
@@ -18454,7 +18454,7 @@
      <string>matriculaGestorArea_h</string>
     </void>
     <void index="44">
-     <string>matriculaParticipante</string>
+     <string>tbParticipanteMatricula</string>
     </void>
     <void index="45">
      <string>matriculaSolicitante</string>
@@ -18475,7 +18475,7 @@
      <string>nomeInstituicao_h</string>
     </void>
     <void index="51">
-     <string>nomeParticipante</string>
+     <string>tbParticipanteNome</string>
     </void>
     <void index="52">
      <string>nomeTreinamento</string>
@@ -18556,7 +18556,7 @@
      <string>optionRadioPalestraCongresso_h</string>
     </void>
     <void index="78">
-     <string>optionRadioPDI_h</string>
+     <string>optionRadiotbParticipantePDI_h</string>
     </void>
     <void index="79">
      <string>optionRadioPresencial_h</string>
@@ -18580,7 +18580,7 @@
      <string>optionRadioWorkshopForum_h</string>
     </void>
     <void index="86">
-     <string>pdi</string>
+     <string>tbParticipantePDI</string>
     </void>
     <void index="87">
      <string>planilhaParticipantes</string>
@@ -18601,16 +18601,16 @@
      <string>quantidadeParticipantes_h</string>
     </void>
     <void index="93">
-     <string>situacao</string>
+     <string>tbParticipanteSituacao</string>
     </void>
     <void index="94">
-     <string>TBPART</string>
+     <string>tbParticipante</string>
     </void>
     <void index="95">
-     <string>tempoEmpresa</string>
+     <string>tbParticipanteTempoEmpresa</string>
     </void>
     <void index="96">
-     <string>ultimaADC</string>
+     <string>tbParticipanteADC</string>
     </void>
     <void index="97">
      <string>unidade</string>

@@ -6,7 +6,7 @@ function exibirAlerta(iconePersonalizado, tituloPersonalizado, textoPersonalizad
 
 // Função auxiliar para remover todas as linhas da tabela pai x filho
 function excluirTodasLinhas() {
-    $("table[tablename='TBPART'] tbody tr").not(":first").remove();
+    $("table[tablename='tbParticipante'] tbody tr").not(":first").remove();
     $("#qtd_participantes").val(0);
     $("#quantidadeParticipantes").text(0);
 }
@@ -24,13 +24,13 @@ function verificaRadio(radio) {
 var beforeSendValidate = function (numState, nextState) {
 
     // Sufixo de cada elemento filho da tabela Pai x Filho
-    var participantes = document.querySelectorAll("[id^='indiceParticipantes___']");
+    var participantes = document.querySelectorAll("[id^='tbParticipanteIndice___']");
     var sufixoParticipantes = [];
 
     participantes.forEach(function(participante) {
-        // Exemplo de Element ID para facilitar: indiceParticipantes___1
-        let id = participante.id; // indiceParticipantes___1
-        let idSeparado = id.split("___"); // ['indiceParticipantes', '1']
+        // Exemplo de Element ID para facilitar: tbParticipanteIndice___1
+        let id = participante.id; // tbParticipanteIndice___1
+        let idSeparado = id.split("___"); // ['tbParticipanteIndice', '1']
         let sufixoAtual = idSeparado[1]; // '1'
         sufixoParticipantes.push(sufixoAtual);
     })
@@ -251,42 +251,42 @@ var beforeSendValidate = function (numState, nextState) {
 
             if (sufixoParticipantes.length > 0) {
                 sufixoParticipantes.forEach(sufixo => {
-                    let indiceParticipante = $(`#indiceParticipantes___${sufixo}`).val();
+                    let indiceParticipante = $(`#tbParticipanteIndice___${sufixo}`).val();
 
-                    if ($(`#matriculaParticipante___${sufixo}`).val() == '') {
+                    if ($(`#tbParticipanteMatricula___${sufixo}`).val() == '') {
                         exibirAlerta("error", "Atenção", `O campo deve estar preenchido: Matrícula do participante! (Índice: ${indiceParticipante})`);
                         errosEncontrados = true;
                         return; // Sai da iteração atual após dar erro e testa o próximo sufixo
-                    } else if ($(`#nomeParticipante___${sufixo}`).val() == '') {
+                    } else if ($(`#tbParticipanteNome___${sufixo}`).val() == '') {
                         exibirAlerta("error", "Atenção", `O campo deve estar preenchido: Nome do participante! (Índice: ${indiceParticipante})`);
                         errosEncontrados = true;
                         return;
-                    } else if ($(`#cargo___${sufixo}`).val() == '') {
-                        exibirAlerta("error", "Atenção", `O campo deve estar preenchido: Cargo do participante! (Índice: ${indiceParticipante})`);
+                    } else if ($(`#tbParticipanteCargo___${sufixo}`).val() == '') {
+                        exibirAlerta("error", "Atenção", `O campo deve estar preenchido: tbParticipanteCargo do participante! (Índice: ${indiceParticipante})`);
                         errosEncontrados = true;
                         return;
-                    } else if ($(`#dataAdmissao___${sufixo}`).val() == '') {
+                    } else if ($(`#tbParticipanteAdmissao___${sufixo}`).val() == '') {
                         exibirAlerta("error", "Atenção", `O campo deve estar preenchido: Data de admissão! (Índice: ${indiceParticipante})`);
                         errosEncontrados = true;
                         return;
-                    } else if ($(`#situacao___${sufixo}`).val() == '') {
+                    } else if ($(`#tbParticipanteSituacao___${sufixo}`).val() == '') {
                         exibirAlerta("error", "Atenção", `O campo deve estar preenchido: Situação do participante! (Índice: ${indiceParticipante})`);
                         errosEncontrados = true;
                         return;
-                    } else if ($(`#tempoEmpresa___${sufixo}`).val() == '') {
+                    } else if ($(`#tbParticipanteTempoEmpresa___${sufixo}`).val() == '') {
                         exibirAlerta("error", "Atenção", `O campo deve estar preenchido: Tempo de empresa do participante! (Índice: ${indiceParticipante})`);
                         errosEncontrados = true;
                         return;
-                    } else if ($(`#ultimaADC___${sufixo}`).val() == '') {
+                    } else if ($(`#tbParticipanteADC___${sufixo}`).val() == '') {
                         exibirAlerta("error", "Atenção", `O campo deve estar preenchido: Nota última ADC do participante! (Índice: ${indiceParticipante})`);
                         errosEncontrados = true;
                         return;
-                    } else if ($(`#aderenciaSaber___${sufixo}`).val() == '') {
+                    } else if ($(`#tbParticipanteAderenciaSaber___${sufixo}`).val() == '') {
                         exibirAlerta("error", "Atenção", `O campo deve estar preenchido: Aderência na plataforma SABER do participante! (Índice: ${indiceParticipante})`);
                         errosEncontrados = true;
                         return;
-                    } else if ($(`#pdi___${sufixo}`).val() == '') {
-                        exibirAlerta("error", "Atenção", `O campo deve estar preenchido: PDI do participante! (Índice: ${indiceParticipante})`);
+                    } else if ($(`#tbParticipantePDI___${sufixo}`).val() == '') {
+                        exibirAlerta("error", "Atenção", `O campo deve estar preenchido: tbParticipantePDI do participante! (Índice: ${indiceParticipante})`);
                         errosEncontrados = true;
                         return;
                     }

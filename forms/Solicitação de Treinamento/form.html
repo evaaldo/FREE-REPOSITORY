@@ -5,16 +5,19 @@
 	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
 	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
-	<script type="text/javascript" src="custom.js"></script>
-	<script type="text/javascript" src="anexos.js"></script>
-	<script type="text/javascript" src="SweetAlert.js"></script>
-	<script type="text/javascript" src="SwalAlert.js"></script>
+	<script type="text/javascript" src="./js/custom.js"></script>
+	<script type="text/javascript" src="./js/dataset.js"></script>
+	<script type="text/javascript" src="./js/campos.js"></script>
+	<script type="text/javascript" src="./js/colaborador.js"></script>
+	<script type="text/javascript" src="./js/anexos.js"></script>
+	<script type="text/javascript" src="./js/beforeSendValidate.js" defer></script>
+	<script type="text/javascript" src="./js/SweetAlert.js"></script>
+	<script type="text/javascript" src="./js/SwalAlert.js"></script>
+	<script type="text/javascript" src="./js/awesomplete.js" defer></script>
 	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
-	<script type="text/javascript" src="awesomplete.js" defer></script>
-	<script type="text/javascript" src="beforeSendValidate.js" defer></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.base.css" integrity="sha512-JreNkqx4723Zhvmy8TtRDue2ZbPrPIzJSjK84o3KUsjA/eKuOW3bhea06M8urMlsFS3Yj+9m3OudzqJDrk3yOQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="awesomplete.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.base.css" integrity="sha512-JreNkqx4723Zhvmy8TtRDue2ZbPrPIzJSjK84o3KUsjA/eKuOW3bhea06M8urMlsFS3Yj+9m3OudzqJDrk3yOQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 	<div class="fluig-style-guide">
@@ -59,7 +62,7 @@
 				<input type="hidden" name="optionRadioAtualizacaoLei_h" id="optionRadioAtualizacaoLei_h">
 				<input type="hidden" name="optionRadioAcaoEngajamento_h" id="optionRadioAcaoEngajamento_h">
 				<input type="hidden" name="optionRadioCumprimentoMatriz_h" id="optionRadioCumprimentoMatriz_h">
-				<input type="hidden" name="optionRadioPDI_h" id="optionRadioPDI_h">
+				<input type="hidden" name="optionRadiotbParticipantePDI_h" id="optionRadiotbParticipantePDI_h">
 				<input type="hidden" name="optionRadioSemFaciliador_h" id="optionRadioSemFaciliador_h">
 				<input type="hidden" name="justificativa_h" id="justificativa_h">
 				<input type="hidden" name="conteudo_programatico_h" id="conteudo_programatico_h">
@@ -105,7 +108,7 @@
 							<div class="row">
 								<div class="form-group col-sm-3">
 									<label class="control-label" for="matriculaGestorArea">Matrícula do Gestor da área <i style="color: red;">*</i></label>
-									<input class="form-control" type="text" id="matriculaGestorArea" name="matriculaGestorArea" placeholder="Ex: 1-10226" mask="0-00000">
+									<input class="form-control" type="text" id="matriculaGestorArea" name="matriculaGestorArea" placeholder="Ex: 1-10226" mask="0-00000" onblur="Colaboradores.preencherDadosGestor()">
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="control-label" for="bpRhResponsavel">BP/RH Responsável <i style="color: red;">*</i></label>
@@ -122,7 +125,7 @@
 							<div class="row">
 								<div class="form-group col-sm-3">
 									<label class="control-label" for="matriculaSolicitante">Matrícula do solicitante <i style="color: red;">*</i></label>
-									<input class="form-control" type="text" id="matriculaSolicitante" name="matriculaSolicitante" placeholder="Ex: 1-10226" mask="0-00000">
+									<input class="form-control" type="text" id="matriculaSolicitante" name="matriculaSolicitante" placeholder="Ex: 1-10226" mask="0-00000" onblur="Colaboradores.preencherDadosSolicitante()">
 								</div>
 								<div class="form-group col-sm-3">
 									<label class="control-label" for="gestorImediato">Nome do gestor imediato <i style="color: red;">*</i></label>
@@ -326,59 +329,59 @@
 								</div>
 							</div>
 							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-								<table tablename="TBPART" name="TBPART" class="table table-striped" id="TBPART" nodeletebutton="true" noaddbutton="true">
+								<table tablename="tbParticipante" name="tbParticipante" class="table table-striped" id="tbParticipante" nodeletebutton="true" noaddbutton="true">
 									<thead>
 										<tr>
 											<th></th>
 										</tr>
 									</thead>
-									<tbody id="TBPART_tbody">
+									<tbody>
 										<tr>
-											<td id="TBPART_linha">
+											<td>
 												<div class="row">
 													<div class="form-group col-sm-3">
-														<label class="control-label" for="indiceParticipantes">Índice <i style="color: red;">*</i></label>
-														<input class="form-control" type="text" id="indiceParticipantes" name="indiceParticipantes" readonly>
+														<label class="control-label" for="tbParticipanteIndice">Índice <i style="color: red;">*</i></label>
+														<input class="form-control" type="text" id="tbParticipanteIndice" name="tbParticipanteIndice" readonly>
 													</div>
 													<div class="form-group col-sm-3">
-														<label class="control-label" for="matriculaParticipante">Matrícula do participante <i style="color: red;">*</i></label>
-														<input class="form-control" type="text" id="matriculaParticipante" name="matriculaParticipante" placeholder="Ex: 1-10226" mask="0-00000">
+														<label class="control-label" for="tbParticipanteMatricula">Matrícula do participante <i style="color: red;">*</i></label>
+														<input class="form-control" type="text" id="tbParticipanteMatricula" name="tbParticipanteMatricula" placeholder="Ex: 1-10226" mask="0-00000">
 													</div>
 													<div class="form-group col-sm-3">
-														<label class="control-label" for="nomeParticipante">Nome do participante <i style="color: red;">*</i></label>
-														<input class="form-control" type="text" id="nomeParticipante" name="nomeParticipante" readonly>
+														<label class="control-label" for="tbParticipanteNome">Nome do participante <i style="color: red;">*</i></label>
+														<input class="form-control" type="text" id="tbParticipanteNome" name="tbParticipanteNome" readonly>
 													</div>
 													<div class="form-group col-sm-3">
-														<label class="control-label" for="cargo">Cargo <i style="color: red;">*</i></label>
-														<input class="form-control" type="text" id="cargo" name="cargo" readonly>
+														<label class="control-label" for="tbParticipanteCargo">Cargo <i style="color: red;">*</i></label>
+														<input class="form-control" type="text" id="tbParticipanteCargo" name="tbParticipanteCargo" readonly>
 													</div>
 												</div>
 												<div class="row">
 													<div class="form-group col-sm-3">
-														<label class="control-label" for="dataAdmissao">Data de admissão <i style="color: red;">*</i></label>
-														<input class="form-control" type="text" id="dataAdmissao" name="dataAdmissao" mask="00/00/0000" readonly>
+														<label class="control-label" for="tbParticipanteAdmissao">Data de admissão <i style="color: red;">*</i></label>
+														<input class="form-control" type="text" id="tbParticipanteAdmissao" name="tbParticipanteAdmissao" mask="00/00/0000" readonly>
 													</div>
 													<div class="form-group col-sm-3">
-														<label class="control-label" for="situacao">Situação <i style="color: red;">*</i></label>
-														<input class="form-control" type="text" id="situacao" name="situacao" readonly>
+														<label class="control-label" for="tbParticipanteSituacao">Situação <i style="color: red;">*</i></label>
+														<input class="form-control" type="text" id="tbParticipanteSituacao" name="tbParticipanteSituacao" readonly>
 													</div>
 													<div class="form-group col-sm-3">
-														<label class="control-label" for="tempoEmpresa">Tempo de empresa <i style="color: red;">*</i></label>
-														<input class="form-control" type="text" id="tempoEmpresa" name="tempoEmpresa" readonly>
+														<label class="control-label" for="tbParticipanteTempoEmpresa">Tempo de empresa <i style="color: red;">*</i></label>
+														<input class="form-control" type="text" id="tbParticipanteTempoEmpresa" name="tbParticipanteTempoEmpresa" readonly>
 													</div>
 													<div class="form-group col-sm-3">
-														<label class="control-label" for="ultimaADC">Nota última ADC <i style="color: red;">*</i></label>
-														<input class="form-control" type="text" id="ultimaADC" name="ultimaADC" placeholder="Ex: Última ADC">
+														<label class="control-label" for="tbParticipanteADC">Nota última ADC <i style="color: red;">*</i></label>
+														<input class="form-control" type="text" id="tbParticipanteADC" name="tbParticipanteADC" placeholder="Ex: Última ADC">
 													</div>
 												</div>
 												<div class="row">
 													<div class="form-group col-sm-9">
-														<label class="control-label" for="aderenciaSaber">Aderência Plataforma SABER <i style="color: red;">*</i></label>
-														<textarea class="form-control" name="aderenciaSaber" id="aderenciaSaber" rows="8" placeholder="Ex: Uso recorrente da plataforma SABER para cursos técnicos"></textarea>
+														<label class="control-label" for="tbParticipanteAderenciaSaber">Aderência Plataforma SABER <i style="color: red;">*</i></label>
+														<textarea class="form-control" name="tbParticipanteAderenciaSaber" id="tbParticipanteAderenciaSaber" rows="8" placeholder="Ex: Uso recorrente da plataforma SABER para cursos técnicos"></textarea>
 													</div>
 													<div class="form-group col-sm-3">
-														<label class="control-label" for="pdi">PDI <i style="color: red;">*</i></label>
-														<input class="form-control" type="text" id="pdi" name="pdi" placeholder="Ex: PDI">
+														<label class="control-label" for="tbParticipantePDI">tbParticipantePDI <i style="color: red;">*</i></label>
+														<input class="form-control" type="text" id="tbParticipantePDI" name="tbParticipantePDI" placeholder="Ex: tbParticipantePDI">
 													</div>
 												</div>
 												<div class="row">
@@ -427,8 +430,8 @@
 									</div>
 									<br>
 									<div class="radio-inline">
-										<label class="control-label" for="optionRadioPDI" id="optionRadioPDILbl">
-											<input type="radio" name="optionRadioRequisitos" id="optionRadioPDI" value="pdi">Previsto como ação no PDI
+										<label class="control-label" for="optionRadiotbParticipantePDI" id="optionRadiotbParticipantePDILbl">
+											<input type="radio" name="optionRadioRequisitos" id="optionRadiotbParticipantePDI" value="tbParticipantePDI">Previsto como ação no tbParticipantePDI
 										</label>
 									</div>
 									<br>
@@ -625,6 +628,7 @@
 					</div>
 					</div>
 					<!-- Campos auxiliares -->
+					<input type="hidden" name="numSolicitacao" id="numSolicitacao">
 					<input type="hidden" name="numAtividade" id="numAtividade">
 					<input type="hidden" name="qtd_participantes" id="qtd_participantes" value="0">
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.min.js" integrity="sha512-HcBl0GSJvt4Qecm4srHapirUx0HJDi2zYXm6KUKNNUGdTIN9cBwakVZHWmRVj4MKgy1AChqhWGYcMDbRKgO0zg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>					

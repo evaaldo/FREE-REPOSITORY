@@ -19,7 +19,7 @@ $(document).ready(function() {
 
         $("#excluirconteudo_programatico").hide();
         $("#excluirdocumentos_processo").hide();
-        $("#TBPART_tbody").each(function() {
+        $("#tbParticipante tbody").each(function() {
             $(this).find("button#removerParticipante").hide();
         });
 
@@ -42,7 +42,7 @@ $(document).ready(function() {
         desabilitarRadio("optionRadioAtualizacaoLeiLbl");
         desabilitarRadio("optionRadioAcaoEngajamentoLbl");
         desabilitarRadio("optionRadioCumprimentoMatrizLbl");
-        desabilitarRadio("optionRadioPDILbl");
+        desabilitarRadio("optionRadiotbParticipantePDILbl");
         desabilitarRadio("optionRadioSemFaciliadorLbl");
         
         desabilitarRadio("optionRadioViajarLbl");
@@ -59,7 +59,7 @@ $(document).ready(function() {
 
         $("#excluirconteudo_programatico").hide();
         $("#excluirdocumentos_processo").hide();
-        $("#TBPART_tbody").each(function() {
+        $("#tbParticipante tbody").each(function() {
             $(this).find("button#removerParticipante").hide();
         });
 
@@ -82,7 +82,7 @@ $(document).ready(function() {
         desabilitarRadio("optionRadioAtualizacaoLeiLbl");
         desabilitarRadio("optionRadioAcaoEngajamentoLbl");
         desabilitarRadio("optionRadioCumprimentoMatrizLbl");
-        desabilitarRadio("optionRadioPDILbl");
+        desabilitarRadio("optionRadiotbParticipantePDILbl");
         desabilitarRadio("optionRadioSemFaciliadorLbl");
         
         desabilitarRadio("optionRadioViajarLbl");
@@ -97,7 +97,7 @@ $(document).ready(function() {
 
         $("#excluirconteudo_programatico").hide();
         $("#excluirdocumentos_processo").hide();
-        $("#TBPART_tbody").each(function() {
+        $("#tbParticipante tbody").each(function() {
             $(this).find("button#removerParticipante").hide();
         });
 
@@ -120,7 +120,7 @@ $(document).ready(function() {
         desabilitarRadio("optionRadioAtualizacaoLeiLbl");
         desabilitarRadio("optionRadioAcaoEngajamentoLbl");
         desabilitarRadio("optionRadioCumprimentoMatrizLbl");
-        desabilitarRadio("optionRadioPDILbl");
+        desabilitarRadio("optionRadiotbParticipantePDILbl");
         desabilitarRadio("optionRadioSemFaciliadorLbl");
         
         desabilitarRadio("optionRadioViajarLbl");
@@ -133,7 +133,7 @@ $(document).ready(function() {
 
         $("#excluirconteudo_programatico").hide();
         $("#excluirdocumentos_processo").hide();
-        $("#TBPART_tbody").each(function() {
+        $("#tbParticipante tbody").each(function() {
             $(this).find("button#removerParticipante").hide();
         });
 
@@ -156,7 +156,7 @@ $(document).ready(function() {
         desabilitarRadio("optionRadioAtualizacaoLeiLbl");
         desabilitarRadio("optionRadioAcaoEngajamentoLbl");
         desabilitarRadio("optionRadioCumprimentoMatrizLbl");
-        desabilitarRadio("optionRadioPDILbl");
+        desabilitarRadio("optionRadiotbParticipantePDILbl");
         desabilitarRadio("optionRadioSemFaciliadorLbl");
         
         desabilitarRadio("optionRadioViajarLbl");
@@ -202,11 +202,11 @@ $(document).ready(function() {
             $("#divAdicionarDocumentoNormativo").show();
             $("#divAdicionarParticipantes").hide();
             $("#divRemoverParticipantes").hide();
-            $("#TBPART").hide();
+            $("#tbParticipante").hide();
         } else if (valorSelecionado == "menosCincoParticipantes") {
             $("#divAdicionarParticipantes").show();
             $("#divRemoverParticipantes").show();
-            $("#TBPART").show();
+            $("#tbParticipante").show();
             $("#divAdicionarPlanilhaParticipantes").hide();
             $("#divAdicionarDocumentoNormativo").hide();
         }
@@ -214,7 +214,6 @@ $(document).ready(function() {
 
     // Insere dados de solicitante por matrícula
     $("#matriculaSolicitante").on("focusout", function() {
-        console.log("integrou")
         let matricula = $(this).val();
         let matriculaSeparada = matricula.split("-");
         let coligada = matriculaSeparada[0];
@@ -229,7 +228,7 @@ $(document).ready(function() {
         var c1BP = DatasetFactory.createConstraint("coligada", coligada, coligada, ConstraintType.MUST);
         var c2BP = DatasetFactory.createConstraint("custo", custo, custo, ConstraintType.MUST);
         var bpSolicitante = DatasetFactory.getDataset("ds_integracao_rm", ["colaborador_rh_bp"], [c1BP, c2BP], null);
-    
+
         if (custo.length == 17) {
             custo = custo.substr(3, 14);
         }
@@ -246,23 +245,8 @@ $(document).ready(function() {
         $("#diretoria_h").val(diretoria.values[0]["DIRETORIA"]);
     });
 
-    // Insere dados do gestor imediato por matrícula
-    $("#matriculaGestorArea").on("focusout", function() {
-        let matricula = $("#matriculaGestorArea").val()
-        let matriculaSeparada = matricula.split("-");
-        let coligada = matriculaSeparada[0];
-        let chapa = matriculaSeparada[1];
-
-        var c1Colaborador = DatasetFactory.createConstraint("coligada", coligada, coligada, ConstraintType.MUST);
-        var c2Colaborador = DatasetFactory.createConstraint("chapa", chapa, chapa, ConstraintType.MUST);
-        var colaborador = DatasetFactory.getDataset("ds_integracao_rm", ["dados_funcionario_por_matricula"], [c1Colaborador, c2Colaborador], null);
-
-        $("#gestorImediato").val(colaborador.values[0]["NOME"]);
-        $("#gestorImediato_h").val(colaborador.values[0]["NOME"]);
-    })
-
     //Insere dados de participante por matrícula
-    $(document).on("focusout", "[id^='matriculaParticipante___']", function() {
+    $(document).on("focusout", "[id^='tbParticipanteMatricula___']", function() {
         let id = $(this).attr('id');
         let index = id.split('___')[1];
         
@@ -275,11 +259,11 @@ $(document).ready(function() {
         var c2 = DatasetFactory.createConstraint("chapa", chapa, chapa, ConstraintType.MUST);
         var colaborador = DatasetFactory.getDataset("ds_integracao_rm", ["dados_funcionario_por_matricula"], [c1, c2], null);
 
-        $(`#nomeParticipante___${index}`).val(colaborador.values[0]["NOME"]);
-        $(`#cargo___${index}`).val(colaborador.values[0]["CARGO"]);
-        $(`#dataAdmissao___${index}`).val(colaborador.values[0]["DATAADMISSAO"]);
-        $(`#situacao___${index}`).val(colaborador.values[0]["CODSITUACAO"]);
-        $(`#tempoEmpresa___${index}`).val(colaborador.values[0]["TEMPO_x0020_DE_x0020_EMPRESA"]);
+        $(`#tbParticipanteNome___${index}`).val(colaborador.values[0]["NOME"]);
+        $(`#tbParticipanteCargo___${index}`).val(colaborador.values[0]["CARGO"]);
+        $(`#tbParticipanteAdmissao___${index}`).val(colaborador.values[0]["DATAADMISSAO"]);
+        $(`#tbParticipanteSituacao___${index}`).val(colaborador.values[0]["CODSITUACAO"]);
+        $(`#tbParticipanteTempoEmpresa___${index}`).val(colaborador.values[0]["TEMPO_x0020_DE_x0020_EMPRESA"]);
     });
 
 });
@@ -290,12 +274,12 @@ function adicionarLinha() {
 
     // id começa com o valor 0
     if(qtdParticipantes < 5) {
-        wdkAddChild("TBPART");
+        wdkAddChild("tbParticipante");
         qtdParticipantes++;
         $("#qtd_participantes").val(qtdParticipantes);
         $("#quantidadeParticipantes").text(qtdParticipantes);
 
-        // Atualiza o texto do elemento indiceParticipantes para corresponder à nova linha
+        // Atualiza o texto do elemento tbParticipanteIndice para corresponder à nova linha
         atualizarIndices();
     } else {
         exibirAlerta("error", "Atenção", "O número máximo de participantes cadastrados via formulário é 5. Caso precise cadastrar mais, anexe a planilha de participantes!");
@@ -304,10 +288,10 @@ function adicionarLinha() {
 
 // Função para atualizar os índices dos participantes
 function atualizarIndices() {
-    $("#TBPART tbody tr").slice(1).each(function(index) {
+    $("#tbParticipante tbody tr").slice(1).each(function(index) {
 
         let indice = index + 1; // Começa com 1
-        $(this).find("[id^='indiceParticipantes']").val(indice);
+        $(this).find("[id^='tbParticipanteIndice']").val(indice);
     });
 }
 
@@ -323,7 +307,7 @@ function excluirLinha(elemento) {
         $("#qtd_participantes").val(qtdParticipantes);
         $("#quantidadeParticipantes").text(qtdParticipantes);
 
-        // Atualiza o texto do elemento indiceParticipantes para corresponder à nova linha
+        // Atualiza o texto do elemento tbParticipanteIndice para corresponder à nova linha
         atualizarIndices();
     } else {
         exibirAlerta("error", "Atenção", "Não é possível remover participantes nessa etapa!");
@@ -332,7 +316,7 @@ function excluirLinha(elemento) {
 
 // Remover todas as linhas da tabela pai x filho
 function excluirTodasLinhas() {
-    $("table[tablename='TBPART'] tbody tr").not(":first").remove();
+    $("table[tablename='tbParticipante'] tbody tr").not(":first").remove();
     $("#qtd_participantes").val(0);
     $("#quantidadeParticipantes").text(0);
 }

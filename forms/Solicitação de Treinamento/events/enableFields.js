@@ -49,7 +49,7 @@ function enableFields(form){
         form.setEnabled("optionRadioAtualizacaoLei", true)
         form.setEnabled("optionRadioAcaoEngajamento", true)
         form.setEnabled("optionRadioCumprimentoMatriz", true)
-        form.setEnabled("optionRadioPDI", true)
+        form.setEnabled("optionRadiotbParticipantePDI", true)
         form.setEnabled("optionRadioSemFaciliador", true)
         form.setEnabled("justificativa", true)
         form.setEnabled("conteudoProgramaticoDescricao", true)
@@ -113,7 +113,7 @@ function enableFields(form){
 }
 
 function habilitaCamposTabelaParticipantes(form, numAtividade) {
-    var participantes = form.getChildrenIndexes("TBPART");
+    var participantes = form.getChildrenIndexes("tbParticipante");
     var i = /^(0|7|61|64)$/.test(numAtividade) ? -1 : 0;
     var sufixo = null;
     
@@ -121,16 +121,16 @@ function habilitaCamposTabelaParticipantes(form, numAtividade) {
         for(i; i < participantes.length; i++) {
             sufixo = i == "-1" ? "" : "___" + participantes[i]
     
-            form.setEnabled("indiceParticipantes" + sufixo, true);
-            form.setEnabled("matriculaParticipante" + sufixo, true);
-            form.setEnabled("nomeParticipante" + sufixo, true);
-            form.setEnabled("cargo" + sufixo, true);
-            form.setEnabled("dataAdmissao" + sufixo, true);
-            form.setEnabled("situacao" + sufixo, true);
-            form.setEnabled("tempoEmpresa" + sufixo, true);
-            form.setEnabled("ultimaADC" + sufixo, true);
-            form.setEnabled("aderenciaSaber" + sufixo, true);
-            form.setEnabled("pdi" + sufixo, true);
+            form.setEnabled("tbParticipanteIndice" + sufixo, true);
+            form.setEnabled("tbParticipanteMatricula" + sufixo, true);
+            form.setEnabled("tbParticipanteNome" + sufixo, true);
+            form.setEnabled("tbParticipanteCargo" + sufixo, true);
+            form.setEnabled("tbParticipanteAdmissao" + sufixo, true);
+            form.setEnabled("tbParticipanteSituacao" + sufixo, true);
+            form.setEnabled("tbParticipanteTempoEmpresa" + sufixo, true);
+            form.setEnabled("tbParticipanteADC" + sufixo, true);
+            form.setEnabled("tbParticipanteAderenciaSaber" + sufixo, true);
+            form.setEnabled("tbParticipantePDI" + sufixo, true);
         }
     }
 }
