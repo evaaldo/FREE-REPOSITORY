@@ -6,6 +6,9 @@
 	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
 	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
 	<script type="text/javascript" src="./js/custom.js"></script>
+	<script type="text/javascript" src="./js/atividades.js"></script>
+	<script type="text/javascript" src="./js/utils.js"></script>
+	<script type="text/javascript" src="./js/form.js"></script>
 	<script type="text/javascript" src="./js/dataset.js"></script>
 	<script type="text/javascript" src="./js/campos.js"></script>
 	<script type="text/javascript" src="./js/colaborador.js"></script>
@@ -62,7 +65,7 @@
 				<input type="hidden" name="optionRadioAtualizacaoLei_h" id="optionRadioAtualizacaoLei_h">
 				<input type="hidden" name="optionRadioAcaoEngajamento_h" id="optionRadioAcaoEngajamento_h">
 				<input type="hidden" name="optionRadioCumprimentoMatriz_h" id="optionRadioCumprimentoMatriz_h">
-				<input type="hidden" name="optionRadiotbParticipantePDI_h" id="optionRadiotbParticipantePDI_h">
+				<input type="hidden" name="optionRadioParticipantePDI_h" id="optionRadioParticipantePDI_h">
 				<input type="hidden" name="optionRadioSemFaciliador_h" id="optionRadioSemFaciliador_h">
 				<input type="hidden" name="justificativa_h" id="justificativa_h">
 				<input type="hidden" name="conteudo_programatico_h" id="conteudo_programatico_h">
@@ -100,7 +103,7 @@
 					<h3 class="panel-title text-center">SOLICITAÇÃO DE TREINAMENTO</h3>
 				</div>
 				<div class="panel-body">
-					<div class="panel panel-info" id="fase_1">
+					<div class="panel panel-info" id="painelInfosGerais">
 						<div class="panel-heading">
 							<h3 class="panel-title text-center">Informações Gerais</h3>
 						</div>
@@ -118,7 +121,7 @@
 									<label class="control-label" for="areaSolicitante">Área solicitante <i style="color: red;">*</i></label>
 									<br>
 									<div class="controls">
-										<input class="form-control awesomplete" type="text" id="areaSolicitante" name="areaSolicitante" placeholder="Ex: Treinamentos"/>
+										<input class="form-control awesomplete" type="text" id="areaSolicitante" name="areaSolicitante" placeholder="Ex: Treinamentos" onblur="Formulario.verificaExistenciaArea(this)"/>
 									</div>
 								</div>	
 							</div>
@@ -142,7 +145,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="panel panel-info" id="fase_2">
+					<div class="panel panel-info" id="painelDadosTreinamento">
 						<div class="panel-heading">
 							<h3 class="panel-title text-center">Dados do Treinamento</h3>
 						</div>
@@ -251,7 +254,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="panel panel-info" id="fase_3">
+					<div class="panel panel-info" id="painelInfosParticipantes">
 						<div class="panel-heading">
 							<h3 class="panel-title text-center">Informações dos Participantes</h3>
 						</div>
@@ -273,7 +276,7 @@
 							<div class="row">
 								<div class="form-group col-sm-3">
 									<label for="escalaParticipantes" class="control-label">Escala de participantes <i style="color: red;">*</i></label>
-									<select class="form-control" id="escalaParticipantes" name="escalaParticipantes">
+									<select class="form-control" id="escalaParticipantes" name="escalaParticipantes" onchange="Formulario.definirEscalaParticipantes(this.value)">
 										<option value="">Selecione...</option>
 										<option value="maisCincoParticipantes">Mais de 5 participantes</option>
 										<option value="menosCincoParticipantes">Menos de 5 participantes</option>
@@ -281,11 +284,11 @@
 								</div>
 								<div class="form-group col-sm-2" id="divAdicionarParticipantes" style="display: none;">
 									<label class="control-label">Quantidade de participantes: <span id="quantidadeParticipantes">0</span></label>
-									<button id="adicionarParticipante" class="btn btn-success btn-block" onclick="adicionarLinha();"><i class="flaticon flaticon-circle-plus icon-xs" aria-hidden="true"></i> Adicionar Participante</button>
+									<button id="adicionarParticipante" class="btn btn-success btn-block" onclick="Formulario.adicionarLinha();"><i class="flaticon flaticon-circle-plus icon-xs" aria-hidden="true"></i> Adicionar Participante</button>
 								</div>
 								<div class="form-group col-sm-2" id="divRemoverParticipantes" style="display: none;">
 									<label class="control-label">Quantidade máxima: 5</label>
-									<button id="removerTodosParticipante" class="btn btn-danger btn-block" onclick="excluirTodasLinhas();"><i class="flaticon flaticon-cancel icon-xs" aria-hidden="true"></i> Remover Todos</button>
+									<button id="removerTodosParticipante" class="btn btn-danger btn-block" onclick="Formulario.excluirTodasLinhas();"><i class="flaticon flaticon-cancel icon-xs" aria-hidden="true"></i> Remover Todos</button>
 								</div>
 								<div class="form-group col-sm-2" id="divAdicionarPlanilhaParticipantes" style="display: none;">
 									<label class="control-label" for="planilhaParticipantes">Planilha de participantes <i style="color: red;">*</i></label>
@@ -345,7 +348,7 @@
 													</div>
 													<div class="form-group col-sm-3">
 														<label class="control-label" for="tbParticipanteMatricula">Matrícula do participante <i style="color: red;">*</i></label>
-														<input class="form-control" type="text" id="tbParticipanteMatricula" name="tbParticipanteMatricula" placeholder="Ex: 1-10226" mask="0-00000">
+														<input class="form-control" type="text" id="tbParticipanteMatricula" name="tbParticipanteMatricula" placeholder="Ex: 1-10226" mask="0-00000" onblur="Colaboradores.preencherDadosParticipante(this.id)">
 													</div>
 													<div class="form-group col-sm-3">
 														<label class="control-label" for="tbParticipanteNome">Nome do participante <i style="color: red;">*</i></label>
@@ -386,7 +389,7 @@
 												</div>
 												<div class="row">
 													<div class="form-group col-sm-2">
-														<button id="removerParticipante" class="btn btn-danger btn-block" onclick="excluirLinha(this);"><i class="flaticon flaticon-cancel icon-xs" aria-hidden="true"></i> Remover Participante</button>
+														<button id="removerParticipante" class="btn btn-danger btn-block" onclick="Formulario.excluirLinha(this);"><i class="flaticon flaticon-cancel icon-xs" aria-hidden="true"></i> Remover Participante</button>
 													</div>
 												</div>
 											</td>
@@ -396,7 +399,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="panel panel-info" id="fase_4">
+					<div class="panel panel-info" id="painelJustificativaTreinamento">
 						<div class="panel-heading">
 							<h3 class="panel-title text-center">Justificativa de Treinamento</h3>
 						</div>
@@ -430,8 +433,8 @@
 									</div>
 									<br>
 									<div class="radio-inline">
-										<label class="control-label" for="optionRadiotbParticipantePDI" id="optionRadiotbParticipantePDILbl">
-											<input type="radio" name="optionRadioRequisitos" id="optionRadiotbParticipantePDI" value="tbParticipantePDI">Previsto como ação no tbParticipantePDI
+										<label class="control-label" for="optionRadioParticipantePDI" id="optionRadioParticipantePDILbl">
+											<input type="radio" name="optionRadioRequisitos" id="optionRadioParticipantePDI" value="tbParticipantePDI">Previsto como ação no PDI
 										</label>
 									</div>
 									<br>
@@ -492,7 +495,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="panel panel-info" id="fase_5">
+					<div class="panel panel-info" id="painelInvestimento">
 						<div class="panel-heading">
 							<h3 class="panel-title text-center">Investimento</h3>
 						</div>
@@ -539,7 +542,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="panel panel-info" id="fase_6">
+					<div class="panel panel-info" id="painelAprvBP">
 						<div class="panel-heading">
 							<h3 class="panel-title text-center">Aprovação - BP</h3>
 						</div>
@@ -561,7 +564,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="panel panel-info" id="fase_7">
+					<div class="panel panel-info" id="painelAprvAreaResponsavel">
 						<div class="panel-heading">
 							<h3 class="panel-title text-center">Aprovação - Área Responsável</h3>
 						</div>
@@ -583,7 +586,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="panel panel-info" id="fase_8">
+					<div class="panel panel-info" id="painelNivelTreinamento">
 						<div class="panel-heading">
 							<h3 class="panel-title text-center">Definição de nível de treinamento</h3>
 						</div>
@@ -605,7 +608,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="panel panel-info" id="fase_9">
+					<div class="panel panel-info" id="painelCorrecaoNotificacao">
 						<div class="panel-heading">
 							<h3 class="panel-title text-center">[NOTIFICAÇÃO DA ÁREA] Correção de erros</h3>
 						</div>

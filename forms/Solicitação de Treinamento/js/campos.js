@@ -1,6 +1,75 @@
 var Campos = {
 
+    // Paineis do formulário
+
+    sufixosPaineis: {
+        sufixoInfosGerais: "InfosGerais",
+        sufixoDadosTreinamento: "DadosTreinamento",
+        sufixoInfosParticipantes: "InfosParticipantes",
+        sufixoJustificativaTreinamento: "JustificativaTreinamento",
+        sufixoInvestimento: "Investimento",
+        sufixoAprvBP: "AprvBP",
+        sufixoAprvAreaResponsavel: "AprvAreaResponsavel",
+        sufixoNivelTreinamento: "NivelTreinamento",
+        sufixoCorrecaoNotificacao: "CorrecaoNotificacao"
+    },
+
+    // Inputs e textarea de cada atividade
+
+    inputAtividades: {
+
+        inputPreenchimentoSolicitante: function() {
+            return $("#painelInfosGerais input, #painelDadosTreinamento input, #painelInfosParticipantes input, #painelJustificativaTreinamento input, #painelInvestimento input");
+        },
+        
+        inputAprovacaoBP: function() {
+            return $("#painelInfosGerais input, #painelDadosTreinamento input, #painelInfosParticipantes input, #painelJustificativaTreinamento input, #painelInvestimento input, #painelAprvBP input");
+        },
+        
+        inputAprovacaoAreaResponsavel: function() {
+            return $("#painelInfosGerais input, #painelDadosTreinamento input, #painelInfosParticipantes input, #painelJustificativaTreinamento input, #painelInvestimento input, #painelAprvBP input, #painelAprvAreaResponsavel input");
+        },
+        
+        inputNivelTreinamento: function() {
+            return $("#painelInfosGerais input, #painelDadosTreinamento input, #painelInfosParticipantes input, #painelJustificativaTreinamento input, #painelInvestimento input, #painelAprvBP input, #painelAprvAreaResponsavel input, #painelNivelTreinamento input");
+        },
+        
+        inputCorrecaoNotificacao: function() {
+            return $("#painelInfosGerais input, #painelDadosTreinamento input, #painelInfosParticipantes input, #painelJustificativaTreinamento input, #painelInvestimento input, #painelAprvBP input, #painelAprvAreaResponsavel input, #painelNivelTreinamento input, #painelCorrecaoNotificacao input");
+        }
+        
+
+    },
+
+    textareaAtividades: {
+
+        textareaPreenchimentoSolicitante: function() {
+            return $("#painelInfosGerais textarea, #painelDadosTreinamento textarea, #painelInfosParticipantes textarea, #painelJustificativaTreinamento textarea, #painelInvestimento textarea");
+        },
+        
+        textareaAprovacaoBP: function() {
+            return $("#painelInfosGerais textarea, #painelDadosTreinamento textarea, #painelInfosParticipantes textarea, #painelJustificativaTreinamento textarea, #painelInvestimento textarea, #painelAprvBP textarea");
+        },
+        
+        textareaAprovacaoAreaResponsavel: function() {
+            return $("#painelInfosGerais textarea, #painelDadosTreinamento textarea, #painelInfosParticipantes textarea, #painelJustificativaTreinamento textarea, #painelInvestimento textarea, #painelAprvBP textarea, #painelAprvAreaResponsavel textarea");
+        },
+        
+        textareaNivelTreinamento: function() {
+            return $("#painelInfosGerais textarea, #painelDadosTreinamento textarea, #painelInfosParticipantes textarea, #painelJustificativaTreinamento textarea, #painelInvestimento textarea, #painelAprvBP textarea, #painelAprvAreaResponsavel textarea, #painelNivelTreinamento textarea");
+        },
+        
+        textareaCorrecaoNotificacao: function() {
+            return $("#painelInfosGerais textarea, #painelDadosTreinamento textarea, #painelInfosParticipantes textarea, #painelJustificativaTreinamento textarea, #painelInvestimento textarea, #painelAprvBP textarea, #painelAprvAreaResponsavel textarea, #painelNivelTreinamento textarea, #painelCorrecaoNotificacao textarea");
+        }
+
+    },
+
     // Campos auxiliares
+
+    numSolicitacao: function() {
+        return $("#numSolicitacao");
+    },
 
     numAtividade: function() {
         return $("#numAtividade");
@@ -11,6 +80,10 @@ var Campos = {
     },
 
     // Campos de informações gerais
+
+    painel: function(sufixoPainel) {
+        return $("#painel" + sufixoPainel)
+    },
     
     matriculaGestorArea: function() {
         return $("#matriculaGestorArea");
@@ -119,6 +192,14 @@ var Campos = {
     anexo_documentoNormativo: function() {
         return $("#anexo_documentoNormativo");
     },
+
+    qtdParticipantesSpan: function() {
+        return $("#quantidadeParticipantes");
+    },
+
+    linhasTbParticipantes: function() {
+        return $("#tbParticipante tbody tr");
+    },
  
     // Campos de justificativa do treinamento
  
@@ -138,8 +219,8 @@ var Campos = {
         return $("#optionRadioCumprimentoMatriz");
     },
  
-    optionRadiotbParticipantePDI: function() {
-        return $("#optionRadiotbParticipantePDI");
+    optionRadioParticipantePDI: function() {
+        return $("#optionRadioParticipantePDI");
     },
  
     optionRadioSemFaciliador: function() {
@@ -231,6 +312,35 @@ var Campos = {
     envioCorrecaoObservacao: function() {
         return $("#envioCorrecaoObservacao");
     },
+
+    // Radios label
+
+    radios: {
+        labelInterno: "optionRadioInternoLbl",
+        labelExterno: "optionRadioExternoLbl",
+        labelInCompany: "optionRadioIncompanyLbl",
+
+        labelCursoTreinamento: "optionRadioCursoTreinamentoLbl",
+        labelWorkshopForum: "optionRadioWorkshopForumLbl",
+        labelPalestraCongresso: "optionRadioPalestraCongressoLbl",
+
+        labelEAD: "optionRadioEADLbl",
+        labelPresencial: "optionRadioPresencialLbl",
+        labelHibrido: "optionRadioHibridoLbl",
+
+        labelISO: "optionRadioISOLbl",
+        labelAtualizacaoLei: "optionRadioAtualizacaoLeiLbl",
+        labelAcaoEngajamento: "optionRadioAcaoEngajamentoLbl",
+        labelCumprimentoMatriz: "optionRadioCumprimentoMatrizLbl",
+        labelParticipantePDI: "optionRadioParticipantePDILbl",
+        labelSemFaciliador: "optionRadioSemFaciliadorLbl",
+
+        labelViajar: "optionRadioViajarLbl",
+        labelNaoViajar: "optionRadioNaoViajarLbl",
+
+        labelIndividual: "optionRadioIndividualLbl",
+        labelEmGrupo: "optionRadioEmGrupoLbl",
+    },
  
     // Botões
 
@@ -250,10 +360,44 @@ var Campos = {
         return $("#excluirdocumentoNormativo");
     },
 
+    excluirConteudoPragmatico: function() {
+        return $("#excluirconteudo_programatico");
+    },
+
+    excluirdocumentos_processo: function() {
+        return $("#excluirdocumentos_processo");
+    },
+
     removerParticipante: function() {
         return $("#removerParticipante");
     },
 
+    btnRemoverParticipante: function() {
+        return $("button#removerParticipante");
+    },
+
+    // Div's relevantes
+
+    divAdicionarPlanilhaParticipantes: function() {
+        return $("#divAdicionarPlanilhaParticipantes");
+    },
+
+    divAdicionarDocumentoNormativo: function() {
+        return $("#divAdicionarDocumentoNormativo");
+    },
+
+    divAdicionarParticipantes: function() {
+        return $("#divAdicionarParticipantes");
+    },
+
+    divRemoverParticipantes: function() {
+        return $("#divRemoverParticipantes");
+    },
+
+    divTbParticipante: function() {
+        return $("#tbParticipante");
+    },
+    
     // Tabela de participantes
 
     tbParticipante: "tbParticipante",
@@ -282,6 +426,9 @@ var Campos = {
         },
         admissao: function(indice) {
             return $("#" + this._prefixo() + "Admissao" + this._separador() + indice);
+        },
+        situacao: function(indice) {
+            return $("#" + this._prefixo() + "Situacao" + this._separador() + indice);
         },
         tempoEmpresa: function(indice) {
             return $("#" + this._prefixo() + "TempoEmpresa" + this._separador() + indice);
