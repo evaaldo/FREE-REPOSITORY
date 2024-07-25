@@ -112,37 +112,37 @@ var beforeSendValidate = function (numState, nextState) {
 
         // Dados do Treinamento
         if(categoria == '') {
-            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Categoria!")
+            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Categoria!");
+            return false;
+        } else if(Campos.tipo().val() == '') {
+            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Categoria!");
             return false;
         } else if(!Formulario.verificaRadio(optionRadioOrigem)) {
-            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Origem!")
-            return false;
-        } else if(!Formulario.verificaRadio(optionRadioTipo)) {
-            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Tipo!")
+            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Origem!");
             return false;
         } else if(!Formulario.verificaRadio(optionRadioModelo)) {
-            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Modelo!")
+            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Modelo!");
             return false;
         }else if(nomeTreinamento == '') {
-            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Nome do treinamento!")
+            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Nome do treinamento!");
             return false;
         } else if(nomeInstituicao == '') {
-            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Nome da instituição!")
+            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Nome da instituição!");
             return false;
         } else if(contatoInstituicao == '') {
-            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Contato da instituição!")
+            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Contato da instituição!");
             return false;
         } else if(inscricoes == '') {
-            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Inscrições!")
+            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Inscrições!");
             return false;
         } else if(dataTreinamento == '') {
-            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Data do treinamento!")
+            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Data do treinamento!");
             return false;
         } else if(cargaHoraria == '') {
-            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Carga horária!")
+            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Carga horária!");
             return false;
         } else if(dataInscricoesInstanciada > dataTreinamentoInstanciada) {
-            Utils.exibirAlerta("error", "Atenção", "A data do treinamento não pode ser antes da data de inscrição!")
+            Utils.exibirAlerta("error", "Atenção", "A data do treinamento não pode ser antes da data de inscrição!");
             return false;
         }
         
@@ -157,17 +157,17 @@ var beforeSendValidate = function (numState, nextState) {
 
         // Informações dos Participantes
         if(escalaParticipantes == '') {
-            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Escala de participantes!")
+            Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Escala de participantes!");
             return false;
         } else if(escalaParticipantes == "maisCincoParticipantes") {
 
             Formulario.excluirTodasLinhas();
 
             if (planilhaParticipantes == '') {
-                Utils.exibirAlerta("error", "Atenção", "Você deve adicionar uma planilha de participantes!")
+                Utils.exibirAlerta("error", "Atenção", "Você deve adicionar uma planilha de participantes!");
                 return false;
             } else if (documentoNormativo == '') {
-                Utils.exibirAlerta("error", "Atenção", "Você deve adicionar um documento normativo!")
+                Utils.exibirAlerta("error", "Atenção", "Você deve adicionar um documento normativo!");
                 return false;
             }
 
@@ -178,7 +178,7 @@ var beforeSendValidate = function (numState, nextState) {
             $("#divAdicionarDocumentoNormativo #documentoNormativo_h").val(documentoNormativo);
 
             // Justificativa de Treinamento
-            if(!Formulario.verificaRadio(optionRadioRequisitos)) {
+            if(Campos.requisito().val() == '') {
                 Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Requisitos!");
                 return false;
             } else if(justificativa == '') {
@@ -271,7 +271,7 @@ var beforeSendValidate = function (numState, nextState) {
                 } else {
 
                     // Justificativa de Treinamento
-                    if(!Formulario.verificaRadio(optionRadioRequisitos)) {
+                    if(Campos.requisito().val() == '') {
                         Utils.exibirAlerta("error", "Atenção", "O campo deve estar preenchido: Requisitos!")
                         return false;
                     } else if(justificativa == '') {

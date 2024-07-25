@@ -6,10 +6,10 @@
 	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
 	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
 	<script type="text/javascript" src="./js/custom.js"></script>
+	<script type="text/javascript" src="./js/dataset.js"></script>
 	<script type="text/javascript" src="./js/atividades.js"></script>
 	<script type="text/javascript" src="./js/utils.js"></script>
 	<script type="text/javascript" src="./js/form.js"></script>
-	<script type="text/javascript" src="./js/dataset.js"></script>
 	<script type="text/javascript" src="./js/campos.js"></script>
 	<script type="text/javascript" src="./js/colaborador.js"></script>
 	<script type="text/javascript" src="./js/anexos.js"></script>
@@ -151,80 +151,6 @@
 						</div>
 						<div class="panel-body">
 							<div class="row">
-								<div class="form-group col-sm-3">
-									<label class="control-label" for="categoria">Categoria <i style="color: red;">*</i></label>
-									<select class="form-control" id="categoria" name="categoria">
-										<option value="">Selecione..</option>
-										<option value="jeito_ser">Jeito de Ser - Treinamento de Cultura</option>
-										<option value="jeito_fazer">Jeito de Fazer - Treinamento Técnico</option>
-										<option value="jeito_liderar">Jeito de Liderar - Treinamento de Gestão e Liderança</option>
-									</select>
-								</div>
-								<div class="form-group col-sm-3">
-									<label class="control-label">Origem <i style="color: red;">*</i></label>
-									<div class="radio">
-										<label class="control-label" for="optionRadioInterno" id="optionRadioInternoLbl">
-											<input type="radio" name="optionRadioOrigem" id="optionRadioInterno" value="interno">
-											Interno (baixa complexidade)
-										</label>
-									</div>
-									<div class="radio">
-										<label class="control-label" for="optionRadioExterno" id="optionRadioExternoLbl">
-											<input type="radio" name="optionRadioOrigem" id="optionRadioExterno" value="externo">
-											Externo (média complexidade)
-										</label>
-									</div>
-									<div class="radio">
-										<label class="control-label" for="optionRadioInCompany" id="optionRadioIncompanyLbl">
-											<input type="radio" name="optionRadioOrigem" id="optionRadioInCompany" value="inCompany">
-											In Company (alta complexidade)
-										</label>
-									</div>
-								</div>
-								<div class="form-group col-sm-3">
-									<label class="control-label">Tipo <i style="color: red;">*</i></label>
-									<div class="radio">
-										<label class="control-label" for="optionRadioCursoTreinamento" id="optionRadioCursoTreinamentoLbl">
-											<input type="radio" name="optionRadioTipo" id="optionRadioCursoTreinamento" value="cursoTreinamento">
-											Curso/Treinamento
-										</label>
-									</div>
-									<div class="radio">
-										<label class="control-label" for="optionRadioWorkshopForum" id="optionRadioWorkshopForumLbl">
-											<input type="radio" name="optionRadioTipo" id="optionRadioWorkshopForum" value="workshopForum">
-											Workshop/Fórum
-										</label>
-									</div>
-									<div class="radio">
-										<label class="control-label" for="optionRadioPalestraCongresso" id="optionRadioPalestraCongressoLbl">
-											<input type="radio" name="optionRadioTipo" id="optionRadioPalestraCongresso" value="palestraCongresso">
-											Palestra/Congresso
-										</label>
-									</div>
-								</div>
-								<div class="form-group col-sm-3">
-									<label class="control-label">Modelo <i style="color: red;">*</i></label>
-									<div class="radio">
-										<label class="control-label" for="optionRadioEAD" id="optionRadioEADLbl">
-											<input type="radio" name="optionRadioModelo" id="optionRadioEAD" value="ead">
-											EAD
-										</label>
-									</div>
-									<div class="radio">
-										<label class="control-label" for="optionRadioPresencial" id="optionRadioPresencialLbl">
-											<input type="radio" name="optionRadioModelo" id="optionRadioPresencial" value="presencial">
-											Presencial
-										</label>
-									</div>
-									<div class="radio">
-										<label class="control-label" for="optionRadioHibrido" id="optionRadioHibridoLbl">
-											<input type="radio" name="optionRadioModelo" id="optionRadioHibrido" value="hibrido">
-											Híbrido
-										</label>
-									</div>
-								</div>
-							</div>
-							<div class="row">
 								<div class="form-group col-sm-4">
 									<label class="control-label" for="nomeTreinamento">Nome do treinamento <i style="color: red;">*</i></label>
 									<input class="form-control" type="text" id="nomeTreinamento" name="nomeTreinamento" placeholder="Ex: Treinamento de gestão de processos">
@@ -250,6 +176,62 @@
 								<div class="form-group col-sm-4">
 									<label class="control-label" for="cargaHoraria">Carga horária <i style="color: red;">*</i></label>
 									<input class="form-control" type="text" id="cargaHoraria" name="cargaHoraria" placeholder="Ex: 15 horas">
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group col-sm-3">
+									<label class="control-label">Origem <i style="color: red;">*</i></label>
+									<div class="radio">
+										<label class="control-label" for="optionRadioInterno" id="optionRadioInternoLbl">
+											<input type="radio" name="optionRadioOrigem" id="optionRadioInterno" value="interno">
+											Interno (baixa complexidade)
+										</label>
+									</div>
+									<div class="radio">
+										<label class="control-label" for="optionRadioExterno" id="optionRadioExternoLbl">
+											<input type="radio" name="optionRadioOrigem" id="optionRadioExterno" value="externo">
+											Externo (média complexidade)
+										</label>
+									</div>
+									<div class="radio">
+										<label class="control-label" for="optionRadioInCompany" id="optionRadioIncompanyLbl">
+											<input type="radio" name="optionRadioOrigem" id="optionRadioInCompany" value="inCompany">
+											In Company (alta complexidade)
+										</label>
+									</div>
+								</div>
+								<div class="form-group col-sm-3">
+									<label class="control-label">Modelo <i style="color: red;">*</i></label>
+									<div class="radio">
+										<label class="control-label" for="optionRadioEAD" id="optionRadioEADLbl">
+											<input type="radio" name="optionRadioModelo" id="optionRadioEAD" value="ead">
+											EAD
+										</label>
+									</div>
+									<div class="radio">
+										<label class="control-label" for="optionRadioPresencial" id="optionRadioPresencialLbl">
+											<input type="radio" name="optionRadioModelo" id="optionRadioPresencial" value="presencial">
+											Presencial
+										</label>
+									</div>
+									<div class="radio">
+										<label class="control-label" for="optionRadioHibrido" id="optionRadioHibridoLbl">
+											<input type="radio" name="optionRadioModelo" id="optionRadioHibrido" value="hibrido">
+											Híbrido
+										</label>
+									</div>
+								</div>
+								<div class="form-group col-sm-3">
+									<label class="control-label" for="categoria">Categoria <i style="color: red;">*</i></label>
+									<select class="form-control" id="categoria" name="categoria" dataset="DSCadastrarCategoriaTreinamento" datasetkey="categoria" datasetvalue="categoria" addblankline="true">
+										<option value="">Selecione..</option>
+									</select>
+								</div>
+								<div class="form-group col-sm-3">
+									<label class="control-label" for="tipo">Tipo <i style="color: red;">*</i></label>
+									<select class="form-control" id="tipo" name="tipo" dataset="DSCadastrarTipoTreinamento" datasetkey="tipo" datasetvalue="tipo" addblankline="true">
+										<option value="">Selecione..</option>
+									</select>
 								</div>
 							</div>
 						</div>
@@ -383,8 +365,8 @@
 														<textarea class="form-control" name="tbParticipanteAderenciaSaber" id="tbParticipanteAderenciaSaber" rows="8" placeholder="Ex: Uso recorrente da plataforma SABER para cursos técnicos"></textarea>
 													</div>
 													<div class="form-group col-sm-3">
-														<label class="control-label" for="tbParticipantePDI">tbParticipantePDI <i style="color: red;">*</i></label>
-														<input class="form-control" type="text" id="tbParticipantePDI" name="tbParticipantePDI" placeholder="Ex: tbParticipantePDI">
+														<label class="control-label" for="tbParticipantePDI">PDI <i style="color: red;">*</i></label>
+														<input class="form-control" type="text" id="tbParticipantePDI" name="tbParticipantePDI" placeholder="Ex: PDI">
 													</div>
 												</div>
 												<div class="row">
@@ -406,43 +388,10 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="form-group col-sm-6">
-									<label class="control-label">Requisitos <i style="color: red;">*</i></label>
-									<br>
-									<div class="radio-inline">
-										<label class="control-label" for="optionRadioISO" id="optionRadioISOLbl">
-											<input type="radio" name="optionRadioRequisitos" id="optionRadioISO" value="iso">Exigência ISO
-										</label>
-									</div>
-									<br>
-									<div class="radio-inline">
-										<label class="control-label" for="optionRadioAtualizacaoLei" id="optionRadioAtualizacaoLeiLbl">
-											<input type="radio" name="optionRadioRequisitos" id="optionRadioAtualizacaoLei" value="atualizacaoLei">Atualização de lei
-										</label>
-									</div>
-									<br>
-									<div class="radio-inline">
-										<label class="control-label" for="optionRadioAcaoEngajamento" id="optionRadioAcaoEngajamentoLbl">
-											<input type="radio" name="optionRadioRequisitos" id="optionRadioAcaoEngajamento" value="acaoEngajamento">Ação de engajamento
-										</label>
-									</div>
-									<br>
-									<div class="radio-inline">
-										<label class="control-label" for="optionRadioCumprimentoMatriz" id="optionRadioCumprimentoMatrizLbl">
-											<input type="radio" name="optionRadioRequisitos" id="optionRadioCumprimentoMatriz" value="cumprimentoMatriz">Cumprimento de matriz da função
-										</label>
-									</div>
-									<br>
-									<div class="radio-inline">
-										<label class="control-label" for="optionRadioParticipantePDI" id="optionRadioParticipantePDILbl">
-											<input type="radio" name="optionRadioRequisitos" id="optionRadioParticipantePDI" value="tbParticipantePDI">Previsto como ação no PDI
-										</label>
-									</div>
-									<br>
-									<div class="radio-inline">
-										<label class="control-label" for="optionRadioSemFaciliador" id="optionRadioSemFaciliadorLbl">
-											<input type="radio" name="optionRadioRequisitos" id="optionRadioSemFaciliador" value="semFaciliador">Não existe facilitador interno que possui conhecimento no assunto abordado
-										</label>
-									</div>
+									<label for="requisito" class="control-label">Requisitos <i style="color: red;">*</i></label>
+									<select class="form-control" id="requisito" name="requisito" dataset="DSCadastrarRequisitoTreinamento" datasetkey="requisito" datasetvalue="requisito" addblankline="true">
+										<option value="">Selecione...</option>
+									</select>
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="control-label" for="justificativa">Justificativa <i style="color: red;">*</i></label>

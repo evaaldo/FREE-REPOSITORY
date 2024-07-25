@@ -1,140 +1,102 @@
 Atividades = {
     
     inicializar: function(){
-        this.desabilitarTodosOsPaineis();
-        
-        if(/^(0|7)$/.test(Campos.numAtividade().val())) Atividades.etapaPreencherSolicitacao();
-        else if(Campos.numAtividade().val() == 8) Atividades.etapaAprovacaoBP();
-        else if(Campos.numAtividade().val() == 10) Atividades.etapaAprovacaoAreaResponsavel();
-        else if(Campos.numAtividade().val() == 49) Atividades.etapaDefinicaoNivelTreinamento();
-        else if(Campos.numAtividade().val() == 58) Atividades.etapaCorrecaoErroNotificacao();
+        this.desabilitarTodosPaineis();
+        this.habilitarPaineisPercorridos(this.listarPaineis());
     },
 
-    desabilitarTodosOsPaineis: function() {
-        Campos.painel(Campos.sufixosPaineis.sufixoInfosGerais).hide();
-        Campos.painel(Campos.sufixosPaineis.sufixoDadosTreinamento).hide();
-        Campos.painel(Campos.sufixosPaineis.sufixoInfosParticipantes).hide();
-        Campos.painel(Campos.sufixosPaineis.sufixoJustificativaTreinamento).hide();
-        Campos.painel(Campos.sufixosPaineis.sufixoInvestimento).hide();
+    habilitarPaineisPercorridos: function(paineis) {
+        for(var i in paineis){
+            paineis[i].show();
+        }
+    },
+
+    desabilitarTodosPaineis: function() {
         Campos.painel(Campos.sufixosPaineis.sufixoAprvBP).hide();
         Campos.painel(Campos.sufixosPaineis.sufixoAprvAreaResponsavel).hide();
         Campos.painel(Campos.sufixosPaineis.sufixoNivelTreinamento).hide();
         Campos.painel(Campos.sufixosPaineis.sufixoCorrecaoNotificacao).hide();
     },
 
-    etapaPreencherSolicitacao: function() {
-        Campos.painel(Campos.sufixosPaineis.sufixoInfosGerais).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoDadosTreinamento).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoInfosParticipantes).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoJustificativaTreinamento).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoInvestimento).show();
-    },
+    listarPaineis: function(){
+        var atividades = this.consultarAtividadesPercorridas();
+        
+        if(atividades == null) return [];
+        atividades = atividades.filter((data, i) => atividades.indexOf(data) === i);
+        var mapa = this.mapaDeAtividades();
+        var paineis = [];
 
-    etapaAprovacaoBP: function() {
-        Campos.painel(Campos.sufixosPaineis.sufixoInfosGerais).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoDadosTreinamento).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoInfosParticipantes).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoJustificativaTreinamento).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoInvestimento).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoAprvBP).show();
+        mapa.forEach(function(data, i){
+            atividades.forEach(function(atividade){
+                if(data.atividade.includes(atividade.stateSequence)) {
+                    data.paineis.forEach(function(painel){
+                        paineis.push(painel);
 
-        Campos.inputAtividades.inputPreenchimentoSolicitante().prop("readonly", true);
-        Campos.textareaAtividades.textareaPreenchimentoSolicitante().prop("readonly", true);
+                        Utils.desabilitarRadio(Campos.radios.labelInterno);
+                        Utils.desabilitarRadio(Campos.radios.labelExterno);
+                        Utils.desabilitarRadio(Campos.radios.labelInCompany);
 
-        this.mapaDeLabelRadio().forEach((radio) => {
-            Utils.desabilitarRadio(radio);
+                        Utils.desabilitarRadio(Campos.radios.labelEAD);
+                        Utils.desabilitarRadio(Campos.radios.labelPresencial);
+                        Utils.desabilitarRadio(Campos.radios.labelHibrido);
+
+                        Utils.desabilitarRadio(Campos.radios.labelViajar);
+                        Utils.desabilitarRadio(Campos.radios.labelNaoViajar);
+
+                        Utils.desabilitarRadio(Campos.radios.labelIndividual);
+                        Utils.desabilitarRadio(Campos.radios.labelEmGrupo);
+                    });
+                }
+            });
         });
 
-        Utils.ocultarBotoesExclusao();
+        return paineis;
     },
 
-    etapaAprovacaoAreaResponsavel: function() {
-        Campos.painel(Campos.sufixosPaineis.sufixoInfosGerais).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoDadosTreinamento).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoInfosParticipantes).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoJustificativaTreinamento).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoInvestimento).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoAprvBP).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoAprvAreaResponsavel).show();
+    consultarAtividadesPercorridas: function(){
+        if(Formulario.formMode == "ADD") return null;
 
-        Campos.inputAtividades.inputPreenchimentoSolicitante().prop("readonly", true);
-        Campos.textareaAtividades.textareaPreenchimentoSolicitante().prop("readonly", true);
-        Campos.inputAtividades.inputAprovacaoBP().prop("readonly", true);
-        Campos.textareaAtividades.textareaAprovacaoBP().prop("readonly", true);
+        var cSolicitacao = Campos.numSolicitacao().val();
 
-        Utils.ocultarBotoesExclusao();
+        return Datasets.getAtividadesPercorridas(cSolicitacao);
     },
 
-    etapaDefinicaoNivelTreinamento: function() {
-        Campos.painel(Campos.sufixosPaineis.sufixoInfosGerais).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoDadosTreinamento).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoInfosParticipantes).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoJustificativaTreinamento).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoInvestimento).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoAprvBP).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoAprvAreaResponsavel).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoNivelTreinamento).show();
+    mapaDeAtividades: function(){
+        atividades = [],
 
-        Campos.inputAtividades.inputPreenchimentoSolicitante().prop("readonly", true);
-        Campos.textareaAtividades.textareaPreenchimentoSolicitante().prop("readonly", true);
-        Campos.inputAtividades.inputAprovacaoBP().prop("readonly", true);
-        Campos.textareaAtividades.textareaAprovacaoBP().prop("readonly", true);
-        Campos.inputAtividades.inputAprovacaoAreaResponsavel().prop("readonly", true);
-        Campos.textareaAtividades.textareaAprovacaoAreaResponsavel().prop("readonly", true);
+        atividades.push(
+            {
+                atividade: [8], 
+                paineis:[
+                    Campos.painel(Campos.sufixosPaineis.sufixoAprvBP)
+                ]
+            });
 
-        Utils.ocultarBotoesExclusao();
-    },
+        atividades.push(
+            {
+                atividade: [10], 
+                paineis:[
+                    Campos.painel(Campos.sufixosPaineis.sufixoAprvAreaResponsavel)
+                ]
+            });
 
-    etapaCorrecaoErroNotificacao: function() {
-        Campos.painel(Campos.sufixosPaineis.sufixoInfosGerais).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoDadosTreinamento).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoInfosParticipantes).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoJustificativaTreinamento).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoInvestimento).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoAprvBP).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoAprvAreaResponsavel).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoNivelTreinamento).show();
-        Campos.painel(Campos.sufixosPaineis.sufixoCorrecaoNotificacao).show();
+        atividades.push(
+            {
+                atividade: [49], 
+                paineis:[
+                    Campos.painel(Campos.sufixosPaineis.sufixoNivelTreinamento)
+                ]
+            });
 
-        Campos.inputAtividades.inputPreenchimentoSolicitante().prop("readonly", true);
-        Campos.textareaAtividades.textareaPreenchimentoSolicitante().prop("readonly", true);
-        Campos.inputAtividades.inputAprovacaoBP().prop("readonly", true);
-        Campos.textareaAtividades.textareaAprovacaoBP().prop("readonly", true);
-        Campos.inputAtividades.inputAprovacaoAreaResponsavel().prop("readonly", true);
-        Campos.textareaAtividades.textareaAprovacaoAreaResponsavel().prop("readonly", true);
-        Campos.inputAtividades.inputNivelTreinamento().prop("readonly", true);
-        Campos.textareaAtividades.textareaNivelTreinamento().prop("readonly", true);
+        atividades.push(
+            {
+                atividade: [58], 
+                paineis:[
+                    Campos.painel(Campos.sufixosPaineis.sufixoCorrecaoNotificacao)
+                ]
+            });
 
-        Utils.ocultarBotoesExclusao();
-    },
-
-    mapaDeLabelRadio: function() {
-        return [
-            Campos.radios.labelInterno,
-            Campos.radios.labelExterno,
-            Campos.radios.labelInCompany,
-            
-            Campos.radios.labelCursoTreinamento,
-            Campos.radios.labelWorkshopForum,
-            Campos.radios.labelPalestraCongresso,
-
-            Campos.radios.labelEAD,
-            Campos.radios.labelPresencial,
-            Campos.radios.labelHibrido,
-
-            Campos.radios.labelISO,
-            Campos.radios.labelAtualizacaoLei,
-            Campos.radios.labelAcaoEngajamento,
-            Campos.radios.labelCumprimentoMatriz,
-            Campos.radios.labelParticipantePDI,
-            Campos.radios.labelSemFaciliador,
-            
-            Campos.radios.labelViajar,
-            Campos.radios.labelNaoViajar,
-            
-            Campos.radios.labelIndividual,
-            Campos.radios.labelEmGrupo,
-        ]
+        return atividades;
     }
 
 }

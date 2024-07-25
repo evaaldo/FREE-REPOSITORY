@@ -4719,7 +4719,7 @@
     <fonts name="Arial" size="8"/>
     <fonts name="Arial" size="8" bold="true"/>
   </pi:Diagram>
-  <bpmn2:BpmnProcess id="RH_TRE_001_Solicitacao_Treinamento" name="RH - SOLICITA&#xc7;&#xc3;O DE TREINAMENTO" serverId="https://fluigdev.santaclara.com.br/" version="8" author="" extendedFields="&lt;list/>" cardIndex="Solicita&#xe7;&#xe3;o de Treinamento" formSource="local" category="RECURSOS HUMANOS.TREINAMENTOS" publicProcess="true" volume="Default" expedient="Default" instruction="" keyWord="" complementsLevel="1" notifyResponsibleComplements="true" notifyRequisitionerComplements="true"/>
+  <bpmn2:BpmnProcess id="RH_TRE_001_Solicitacao_Treinamento" name="RH - SOLICITA&#xc7;&#xc3;O DE TREINAMENTO" serverId="https://fluigdev.santaclara.com.br/" version="372" author="" extendedFields="&lt;list/>" cardIndex="Solicita&#xe7;&#xe3;o de Treinamento" formSource="local" category="RECURSOS HUMANOS.TREINAMENTOS" publicProcess="true" volume="Default" expedient="Default" instruction="" keyWord="" complementsLevel="1" notifyResponsibleComplements="true" notifyRequisitionerComplements="true"/>
   <bpmn2:BpmnPool id="pool1" name="Solicita&#xe7;&#xe3;o de curso" cores="FFFFFF"/>
   <bpmn2:BpmnSwimLane id="swimlane2" name="RH Solicitante" cores="0080FF"/>
   <bpmn2:BpmnSwimLane id="swimlane3" name="Aprova&#xe7;&#xe3;o - BP" cores="0080C0"/>

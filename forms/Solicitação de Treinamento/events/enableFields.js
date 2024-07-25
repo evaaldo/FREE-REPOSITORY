@@ -1,69 +1,62 @@
 function enableFields(form){
 
-    var numAtividade = getValue("WKNumState")
+    var numAtividade = getValue("WKNumState");
 
     // Número da Atividade
-    form.setValue("numAtividade", numAtividade)
-    form.setEnabled("numAtividade", true)
+    form.setValue("numAtividade", numAtividade);
+    form.setEnabled("numAtividade", true);
 
     if(/^(0|7|61|64)$/.test(numAtividade)) {
 
         // Informações Gerais
-        form.setEnabled("matriculaGestorArea", true)
-        form.setEnabled("matriculaSolicitante", true)
-        form.setEnabled("areaSolicitante", true)
-        form.setEnabled("bpRhResponsavel", true)
-        form.setEnabled("gestorImediato", true)
-        form.setEnabled("unidade", true)
-        form.setEnabled("diretoria", true)
+        form.setEnabled("matriculaGestorArea", true);
+        form.setEnabled("matriculaSolicitante", true);
+        form.setEnabled("areaSolicitante", true);
+        form.setEnabled("bpRhResponsavel", true);
+        form.setEnabled("gestorImediato", true);
+        form.setEnabled("unidade", true);
+        form.setEnabled("diretoria", true);
 
         // Dados do Treinamento
-        form.setEnabled("categoria", true)
-        form.setEnabled("nomeTreinamento", true)
-        form.setEnabled("optionRadioInterno",true)
-        form.setEnabled("optionRadioExterno",true)
-        form.setEnabled("optionRadioInCompany",true)
-        form.setEnabled("nomeInstituicao", true)
-        form.setEnabled("contatoInstituicao", true)
-        form.setEnabled("optionRadioCursoTreinamento",true)
-        form.setEnabled("optionRadioWorkshopForum",true)
-        form.setEnabled("optionRadioPalestraCongresso",true)
-        form.setEnabled("inscricoes", true)
-        form.setEnabled("dataTreinamento", true)
-        form.setEnabled("cargaHoraria", true)
-        form.setEnabled("optionRadioEAD",true)
-        form.setEnabled("optionRadioPresencial",true)
-        form.setEnabled("optionRadioHibrido",true)
+        form.setEnabled("nomeTreinamento", true);
+        form.setEnabled("optionRadioInterno",true);
+        form.setEnabled("optionRadioExterno",true);
+        form.setEnabled("optionRadioInCompany",true);
+        form.setEnabled("nomeInstituicao", true);
+        form.setEnabled("contatoInstituicao", true);
+        form.setEnabled("inscricoes", true);
+        form.setEnabled("dataTreinamento", true);
+        form.setEnabled("cargaHoraria", true);
+        form.setEnabled("optionRadioEAD",true);
+        form.setEnabled("optionRadioPresencial",true);
+        form.setEnabled("optionRadioHibrido",true);
+        form.setEnabled("categoria", true);
+        form.setEnabled("tipo", true);
 
         // Informações dos Participantes
-        form.setEnabled("escalaParticipantes", true)
-        form.setEnabled("quantidadeParticipantes", true)
-        form.setEnabled("anexo_planilhaParticipantes", true)
-        form.setEnabled("anexo_documentoNormativo", true)
+        form.setEnabled("escalaParticipantes", true);
+        form.setEnabled("quantidadeParticipantes", true);
+        form.setEnabled("anexo_planilhaParticipantes", true);
+        form.setEnabled("anexo_documentoNormativo", true);
 
         // Informações dos Participantes - Filhos
-        habilitaCamposTabelaParticipantes(form, numAtividade)
+        habilitaCamposTabelaParticipantes(form, numAtividade);
 
         // Justificativa de Treinamento
-        form.setEnabled("optionRadioISO", true)
-        form.setEnabled("optionRadioAtualizacaoLei", true)
-        form.setEnabled("optionRadioAcaoEngajamento", true)
-        form.setEnabled("optionRadioCumprimentoMatriz", true)
-        form.setEnabled("optionRadiotbParticipantePDI", true)
-        form.setEnabled("optionRadioSemFaciliador", true)
-        form.setEnabled("justificativa", true)
-        form.setEnabled("conteudoProgramaticoDescricao", true)
-        form.setEnabled("programacaoEventoDescricao", true)
-        form.setEnabled("anexo_programacao_evento", true)
-        form.setEnabled("anexo_conteudo_programatico", true)
+        form.setEnabled("requisito", true);
+        form.setEnabled("justificativa", true);
+        form.setEnabled("conteudoProgramaticoDescricao", true);
+        form.setEnabled("programacaoEventoDescricao", true);
+        form.setEnabled("anexo_programacao_evento", true);
+        form.setEnabled("anexo_conteudo_programatico", true);
         
         // Investimento
-        form.setEnabled("optionRadioViajar", true)
-        form.setEnabled("optionRadioNaoViajar", true)
-        form.setEnabled("optionRadioIndividual", true)
-        form.setEnabled("optionRadioEmGrupo", true)
-        form.setEnabled("valorPessoa", true)
-        form.setEnabled("valorTotal", true)
+        form.setEnabled("optionRadioViajar", true);
+        form.setEnabled("optionRadioNaoViajar", true);
+        form.setEnabled("optionRadioIndividual", true);
+        form.setEnabled("optionRadioEmGrupo", true);
+        form.setEnabled("valorPessoa", true);
+        form.setEnabled("valorTotal", true);
 
     } else if(/^(8)$/.test(numAtividade)) {
 
@@ -71,9 +64,56 @@ function enableFields(form){
         form.setEnabled("aprovarBP", true);
         form.setEnabled("observacaoBP", true);
         
-        // Campos de preenchimento do solicitante
+        // Campos de preenchimento anterior
+        // Informações Gerais
+        form.setEnabled("matriculaGestorArea", false);
+        form.setEnabled("matriculaSolicitante", false);
+        form.setEnabled("areaSolicitante", false);
+        form.setEnabled("bpRhResponsavel", false);
+        form.setEnabled("gestorImediato", false);
+        form.setEnabled("unidade", false);
+        form.setEnabled("diretoria", false);
+
+        // Dados do Treinamento
+        form.setEnabled("nomeTreinamento", false);
+        form.setEnabled("optionRadioInterno",false);
+        form.setEnabled("optionRadioExterno",false);
+        form.setEnabled("optionRadioInCompany",false);
+        form.setEnabled("nomeInstituicao", false);
+        form.setEnabled("contatoInstituicao", false);
+        form.setEnabled("inscricoes", false);
+        form.setEnabled("dataTreinamento", false);
+        form.setEnabled("cargaHoraria", false);
+        form.setEnabled("optionRadioEAD",false);
+        form.setEnabled("optionRadioPresencial",false);
+        form.setEnabled("optionRadioHibrido",false);
         form.setEnabled("categoria", false);
+        form.setEnabled("tipo", false);
+
+        // Informações dos Participantes
         form.setEnabled("escalaParticipantes", false);
+        form.setEnabled("quantidadeParticipantes", false);
+        form.setEnabled("anexo_planilhaParticipantes", false);
+        form.setEnabled("anexo_documentoNormativo", false);
+
+        // Campos da tabela Pai x Filho
+        desabilitaCamposTabelaParticipantes(form, numAtividade)
+
+        // Justificativa de Treinamento
+        form.setEnabled("requisito", false);
+        form.setEnabled("justificativa", false);
+        form.setEnabled("conteudoProgramaticoDescricao", false);
+        form.setEnabled("programacaoEventoDescricao", false);
+        form.setEnabled("anexo_programacao_evento", false);
+        form.setEnabled("anexo_conteudo_programatico", false);
+        
+        // Investimento
+        form.setEnabled("optionRadioViajar", false);
+        form.setEnabled("optionRadioNaoViajar", false);
+        form.setEnabled("optionRadioIndividual", false);
+        form.setEnabled("optionRadioEmGrupo", false);
+        form.setEnabled("valorPessoa", false);
+        form.setEnabled("valorTotal", false);
         
     } else if(/^(10)$/.test(numAtividade)) {
         
@@ -81,10 +121,60 @@ function enableFields(form){
         form.setEnabled("aprovarAreaResponsavel", true)
         form.setEnabled("observacaoAreaResponsavel", true)
 
-        // Campos de preenchimento do solicitante
-        form.setEnabled("categoria", false);
-        form.setEnabled("escalaParticipantes", false);
+        // Campos de preenchimento anterior
+        // Aprovação da BP
         form.setEnabled("aprovarBP", false);
+        form.setEnabled("observacaoBP", false);
+        
+        // Informações Gerais
+        form.setEnabled("matriculaGestorArea", false);
+        form.setEnabled("matriculaSolicitante", false);
+        form.setEnabled("areaSolicitante", false);
+        form.setEnabled("bpRhResponsavel", false);
+        form.setEnabled("gestorImediato", false);
+        form.setEnabled("unidade", false);
+        form.setEnabled("diretoria", false);
+
+        // Dados do Treinamento
+        form.setEnabled("nomeTreinamento", false);
+        form.setEnabled("optionRadioInterno",false);
+        form.setEnabled("optionRadioExterno",false);
+        form.setEnabled("optionRadioInCompany",false);
+        form.setEnabled("nomeInstituicao", false);
+        form.setEnabled("contatoInstituicao", false);
+        form.setEnabled("inscricoes", false);
+        form.setEnabled("dataTreinamento", false);
+        form.setEnabled("cargaHoraria", false);
+        form.setEnabled("optionRadioEAD",false);
+        form.setEnabled("optionRadioPresencial",false);
+        form.setEnabled("optionRadioHibrido",false);
+        form.setEnabled("categoria", false);
+        form.setEnabled("tipo", false);
+
+        // Informações dos Participantes
+        form.setEnabled("escalaParticipantes", false);
+        form.setEnabled("quantidadeParticipantes", false);
+        form.setEnabled("anexo_planilhaParticipantes", false);
+        form.setEnabled("anexo_documentoNormativo", false);
+
+        // Campos da tabela Pai x Filho
+        desabilitaCamposTabelaParticipantes(form, numAtividade)
+
+        // Justificativa de Treinamento
+        form.setEnabled("requisito", false);
+        form.setEnabled("justificativa", false);
+        form.setEnabled("conteudoProgramaticoDescricao", false);
+        form.setEnabled("programacaoEventoDescricao", false);
+        form.setEnabled("anexo_programacao_evento", false);
+        form.setEnabled("anexo_conteudo_programatico", false);
+        
+        // Investimento
+        form.setEnabled("optionRadioViajar", false);
+        form.setEnabled("optionRadioNaoViajar", false);
+        form.setEnabled("optionRadioIndividual", false);
+        form.setEnabled("optionRadioEmGrupo", false);
+        form.setEnabled("valorPessoa", false);
+        form.setEnabled("valorTotal", false);
 
     } else if(/^(49)$/.test(numAtividade)) {
 
@@ -92,21 +182,129 @@ function enableFields(form){
         form.setEnabled("nivelTreinamento", true)
         form.setEnabled("observacaoNivelTreinamento", true)
 
-        // Campos de preenchimento do solicitante
-        form.setEnabled("categoria", false);
-        form.setEnabled("escalaParticipantes", false);
+        // Campos de preenchimento anterior
+        // Aprovação da Área
+        form.setEnabled("aprovarAreaResponsavel", false)
+        form.setEnabled("observacaoAreaResponsavel", false)
+
+        // Aprovação da BP
         form.setEnabled("aprovarBP", false);
-        form.setEnabled("aprovarAreaResponsavel", false);
+        form.setEnabled("observacaoBP", false);
+        
+        // Informações Gerais
+        form.setEnabled("matriculaGestorArea", false);
+        form.setEnabled("matriculaSolicitante", false);
+        form.setEnabled("areaSolicitante", false);
+        form.setEnabled("bpRhResponsavel", false);
+        form.setEnabled("gestorImediato", false);
+        form.setEnabled("unidade", false);
+        form.setEnabled("diretoria", false);
+
+        // Dados do Treinamento
+        form.setEnabled("nomeTreinamento", false);
+        form.setEnabled("optionRadioInterno",false);
+        form.setEnabled("optionRadioExterno",false);
+        form.setEnabled("optionRadioInCompany",false);
+        form.setEnabled("nomeInstituicao", false);
+        form.setEnabled("contatoInstituicao", false);
+        form.setEnabled("inscricoes", false);
+        form.setEnabled("dataTreinamento", false);
+        form.setEnabled("cargaHoraria", false);
+        form.setEnabled("optionRadioEAD",false);
+        form.setEnabled("optionRadioPresencial",false);
+        form.setEnabled("optionRadioHibrido",false);
+        form.setEnabled("categoria", false);
+        form.setEnabled("tipo", false);
+
+        // Informações dos Participantes
+        form.setEnabled("escalaParticipantes", false);
+        form.setEnabled("quantidadeParticipantes", false);
+        form.setEnabled("anexo_planilhaParticipantes", false);
+        form.setEnabled("anexo_documentoNormativo", false);
+
+        // Campos da tabela Pai x Filho
+        desabilitaCamposTabelaParticipantes(form, numAtividade)        
+
+        // Justificativa de Treinamento
+        form.setEnabled("requisito", false);
+        form.setEnabled("justificativa", false);
+        form.setEnabled("conteudoProgramaticoDescricao", false);
+        form.setEnabled("programacaoEventoDescricao", false);
+        form.setEnabled("anexo_programacao_evento", false);
+        form.setEnabled("anexo_conteudo_programatico", false);
+        
+        // Investimento
+        form.setEnabled("optionRadioViajar", false);
+        form.setEnabled("optionRadioNaoViajar", false);
+        form.setEnabled("optionRadioIndividual", false);
+        form.setEnabled("optionRadioEmGrupo", false);
+        form.setEnabled("valorPessoa", false);
+        form.setEnabled("valorTotal", false);
         
     } else if(/^(58)$/.test(numAtividade)) {
 
-        // Campos de preenchimento do solicitante
-        form.setEnabled("categoria", false);
-        form.setEnabled("escalaParticipantes", false);
+        // Campos de preenchimento anterior
+        // Definição de nível de treinamento
+        form.setEnabled("nivelTreinamento", false)
+        form.setEnabled("observacaoNivelTreinamento", false)
+
+        // Aprovação da Área
+        form.setEnabled("aprovarAreaResponsavel", false)
+        form.setEnabled("observacaoAreaResponsavel", false)
+
+        // Aprovação da BP
         form.setEnabled("aprovarBP", false);
-        form.setEnabled("aprovarAreaResponsavel", false);
-        form.setEnabled("nivelTreinamento", false);
-        form.setEnabled("observacaoAreaResponsavel", false);
+        form.setEnabled("observacaoBP", false);
+        
+        // Informações Gerais
+        form.setEnabled("matriculaGestorArea", false);
+        form.setEnabled("matriculaSolicitante", false);
+        form.setEnabled("areaSolicitante", false);
+        form.setEnabled("bpRhResponsavel", false);
+        form.setEnabled("gestorImediato", false);
+        form.setEnabled("unidade", false);
+        form.setEnabled("diretoria", false);
+
+        // Dados do Treinamento
+        form.setEnabled("nomeTreinamento", false);
+        form.setEnabled("optionRadioInterno",false);
+        form.setEnabled("optionRadioExterno",false);
+        form.setEnabled("optionRadioInCompany",false);
+        form.setEnabled("nomeInstituicao", false);
+        form.setEnabled("contatoInstituicao", false);
+        form.setEnabled("inscricoes", false);
+        form.setEnabled("dataTreinamento", false);
+        form.setEnabled("cargaHoraria", false);
+        form.setEnabled("optionRadioEAD",false);
+        form.setEnabled("optionRadioPresencial",false);
+        form.setEnabled("optionRadioHibrido",false);
+        form.setEnabled("categoria", false);
+        form.setEnabled("tipo", false);
+
+        // Informações dos Participantes
+        form.setEnabled("escalaParticipantes", false);
+        form.setEnabled("quantidadeParticipantes", false);
+        form.setEnabled("anexo_planilhaParticipantes", false);
+        form.setEnabled("anexo_documentoNormativo", false);
+
+        // Campos da tabela Pai x Filho
+        desabilitaCamposTabelaParticipantes(form, numAtividade)        
+
+        // Justificativa de Treinamento
+        form.setEnabled("requisito", false);
+        form.setEnabled("justificativa", false);
+        form.setEnabled("conteudoProgramaticoDescricao", false);
+        form.setEnabled("programacaoEventoDescricao", false);
+        form.setEnabled("anexo_programacao_evento", false);
+        form.setEnabled("anexo_conteudo_programatico", false);
+        
+        // Investimento
+        form.setEnabled("optionRadioViajar", false);
+        form.setEnabled("optionRadioNaoViajar", false);
+        form.setEnabled("optionRadioIndividual", false);
+        form.setEnabled("optionRadioEmGrupo", false);
+        form.setEnabled("valorPessoa", false);
+        form.setEnabled("valorTotal", false);
 
     }
 
@@ -131,6 +329,29 @@ function habilitaCamposTabelaParticipantes(form, numAtividade) {
             form.setEnabled("tbParticipanteADC" + sufixo, true);
             form.setEnabled("tbParticipanteAderenciaSaber" + sufixo, true);
             form.setEnabled("tbParticipantePDI" + sufixo, true);
+        }
+    }
+}
+
+function desabilitaCamposTabelaParticipantes(form, numAtividade) {
+    var participantes = form.getChildrenIndexes("tbParticipante");
+    var i = /^(0|7|61|64)$/.test(numAtividade) ? -1 : 0;
+    var sufixo = null;
+    
+    if(participantes.length > 0) {
+        for(i; i < participantes.length; i++) {
+            sufixo = i == "-1" ? "" : "___" + participantes[i]
+    
+            form.setEnabled("tbParticipanteIndice" + sufixo, false);
+            form.setEnabled("tbParticipanteMatricula" + sufixo, false);
+            form.setEnabled("tbParticipanteNome" + sufixo, false);
+            form.setEnabled("tbParticipanteCargo" + sufixo, false);
+            form.setEnabled("tbParticipanteAdmissao" + sufixo, false);
+            form.setEnabled("tbParticipanteSituacao" + sufixo, false);
+            form.setEnabled("tbParticipanteTempoEmpresa" + sufixo, false);
+            form.setEnabled("tbParticipanteADC" + sufixo, false);
+            form.setEnabled("tbParticipanteAderenciaSaber" + sufixo, false);
+            form.setEnabled("tbParticipantePDI" + sufixo, false);
         }
     }
 }

@@ -118,6 +118,10 @@ var Campos = {
     categoria: function() {
         return $("#categoria");
     },
+
+    tipo: function() {
+        return $("#tipo");
+    },
  
     optionRadioInterno: function() {
         return $("#optionRadioInterno");
@@ -129,18 +133,6 @@ var Campos = {
  
     optionRadioInCompany: function() {
         return $("#optionRadioInCompany");
-    },
- 
-    optionRadioCursoTreinamento: function() {
-        return $("#optionRadioCursoTreinamento");
-    },
- 
-    optionRadioWorkshopForum: function() {
-        return $("#optionRadioWorkshopForum");
-    },
- 
-    optionRadioPalestraCongresso: function() {
-        return $("#optionRadioPalestraCongresso");
     },
  
     optionRadioEAD: function() {
@@ -203,28 +195,8 @@ var Campos = {
  
     // Campos de justificativa do treinamento
  
-    optionRadioISO: function() {
-        return $("#optionRadioISO");
-    },
- 
-    optionRadioAtualizacaoLei: function() {
-        return $("#optionRadioAtualizacaoLei");
-    },
- 
-    optionRadioAcaoEngajamento: function() {
-        return $("#optionRadioAcaoEngajamento");
-    },
- 
-    optionRadioCumprimentoMatriz: function() {
-        return $("#optionRadioCumprimentoMatriz");
-    },
- 
-    optionRadioParticipantePDI: function() {
-        return $("#optionRadioParticipantePDI");
-    },
- 
-    optionRadioSemFaciliador: function() {
-        return $("#optionRadioSemFaciliador");
+    requisito: function() {
+        return $("#requisito");
     },
 
     justificativa: function() {
@@ -320,20 +292,9 @@ var Campos = {
         labelExterno: "optionRadioExternoLbl",
         labelInCompany: "optionRadioIncompanyLbl",
 
-        labelCursoTreinamento: "optionRadioCursoTreinamentoLbl",
-        labelWorkshopForum: "optionRadioWorkshopForumLbl",
-        labelPalestraCongresso: "optionRadioPalestraCongressoLbl",
-
         labelEAD: "optionRadioEADLbl",
         labelPresencial: "optionRadioPresencialLbl",
         labelHibrido: "optionRadioHibridoLbl",
-
-        labelISO: "optionRadioISOLbl",
-        labelAtualizacaoLei: "optionRadioAtualizacaoLeiLbl",
-        labelAcaoEngajamento: "optionRadioAcaoEngajamentoLbl",
-        labelCumprimentoMatriz: "optionRadioCumprimentoMatrizLbl",
-        labelParticipantePDI: "optionRadioParticipantePDILbl",
-        labelSemFaciliador: "optionRadioSemFaciliadorLbl",
 
         labelViajar: "optionRadioViajarLbl",
         labelNaoViajar: "optionRadioNaoViajarLbl",
@@ -506,10 +467,10 @@ var Campos = {
 
     val: function (campo) {
         return campo.is("input[type=text],input[type=hidden],select,textarea")
-            ? null != campo.val()
+          ? null != campo.val()
             ? campo.val().trim()
             : ""
-            : campo.html();
+          : campo.html();
     }
 
 }

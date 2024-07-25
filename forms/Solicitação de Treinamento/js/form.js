@@ -17,7 +17,7 @@ var Formulario = {
         new Awesomplete(input, {
             list: areas
         });
-
+        
     },
 
     definirEscalaParticipantes: function(escala) {
@@ -124,7 +124,7 @@ var Formulario = {
         }
         return false
 
-    }
+    },
 
 };
 

@@ -4,7 +4,43 @@ var Datasets = {
     dsFuncionarioPorMatricula: "dados_funcionario_por_matricula",
     dsBPColaborador: "colaborador_rh_bp",
     dsDiretoriaCentroCusto: "diretoria_centroCusto",
-	processHistory : 'processHistory',
+	processHistory : "processHistory",
+
+    get: function(dataset,fields,constraints,order){
+		
+		var _constraints = [];
+		
+		for (var i in constraints) {
+			
+			var campo = constraints[i][0];
+			var valorInicial = constraints[i][1];
+			var valorFinal = valorInicial;
+			var tipo = ConstraintType.MUST;
+			var like = constraints[i][3] || false;
+			
+			_constraints.push(DatasetFactory.createConstraint(campo,valorInicial,valorFinal,tipo,like))
+		}
+		
+		return _dataset = DatasetFactory.getDataset(
+			dataset,
+			fields,
+			_constraints,
+			order
+		).values;
+	},
+	
+	getRow: function(dataset,fields,constraints,order){
+		//if (null != constraints) {
+		//	constraints.push(["sqlLimit",1,"must"]);
+		//}
+		var _dataset = this.get(dataset,fields,constraints,order);
+		return undefined != _dataset && _dataset.length > 0 ? _dataset[0] : null;
+	},
+	
+	getRows: function(dataset,fields,constraints,order){
+		var _dataset = this.get(dataset,fields,constraints,order);
+		return undefined != _dataset && _dataset.length > 0 ? _dataset : null;
+	},
 
     getDadosSolicitante: function(matricula) {
         var matriculaSeparada = matricula.split("-");
@@ -57,14 +93,14 @@ var Datasets = {
     },
 
     getAtividadesPercorridas: function(numeroSolicitacao) {
-        var atividadesPercorridas = DatasetFactory.getDataset(
-                Datasets.processHistory,
-                ["stateSequence"],
-                [
-                    ["processInstaceId", Campos.val(numeroSolicitacao), "must"]
-                ],
-                ["stateSequence"]
-            )
+        var atividadesPercorridas = Datasets.getRows(
+            Datasets.processHistory,
+            ["stateSequence"],
+            [
+                ["processInstanceId",numeroSolicitacao,"must"],
+            ],
+            ['stateSequence']
+        )
 
         return atividadesPercorridas;
     },
@@ -73,6 +109,6 @@ var Datasets = {
         var areas = DatasetFactory.getDataset(Datasets.dsRMFuncionarios, ["areas"], null, null);
 
         return areas;
-    }
+    },
 
 }
