@@ -28,7 +28,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>RH - SOLICITAÇÃO DE TREINAMENTO</processId>
-      <version>372</version>
+      <version>1</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>0</formId>
@@ -843,7 +843,7 @@
         <companyId>1</companyId>
         <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <expressionOrder>1</expressionOrder>
-        <version>372</version>
+        <version>1</version>
         <sequence>12</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovarBP&apos;) == &apos;aprovadoBP&apos;</condition>
@@ -855,7 +855,7 @@
         <companyId>1</companyId>
         <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <expressionOrder>2</expressionOrder>
-        <version>372</version>
+        <version>1</version>
         <sequence>12</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovarBP&apos;) == &apos;negadoBP&apos;</condition>
@@ -867,7 +867,7 @@
         <companyId>1</companyId>
         <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <expressionOrder>3</expressionOrder>
-        <version>372</version>
+        <version>1</version>
         <sequence>12</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovarBP&apos;) == &apos;necessitaAjustesBP&apos;</condition>
@@ -879,7 +879,7 @@
         <companyId>1</companyId>
         <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <expressionOrder>1</expressionOrder>
-        <version>372</version>
+        <version>1</version>
         <sequence>46</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovarAreaResponsavel&apos;) == &apos;aprovadoAreaResponsavel&apos;</condition>
@@ -891,7 +891,7 @@
         <companyId>1</companyId>
         <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <expressionOrder>2</expressionOrder>
-        <version>372</version>
+        <version>1</version>
         <sequence>46</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovarAreaResponsavel&apos;) == &apos;negadoAreaResponsavel&apos;</condition>
@@ -903,7 +903,7 @@
         <companyId>1</companyId>
         <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
         <expressionOrder>3</expressionOrder>
-        <version>372</version>
+        <version>1</version>
         <sequence>46</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovarAreaResponsavel&apos;) == &apos;necessitaAjustesAreaResponsavel&apos;</condition>
@@ -1362,7 +1362,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
-        <version>372</version>
+        <version>1</version>
         <linkSequence>60</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1373,7 +1373,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
-        <version>372</version>
+        <version>1</version>
         <linkSequence>60</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1384,7 +1384,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>RH_TRE_001_Solicitacao_Treinamento</processId>
-        <version>372</version>
+        <version>1</version>
         <linkSequence>65</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>

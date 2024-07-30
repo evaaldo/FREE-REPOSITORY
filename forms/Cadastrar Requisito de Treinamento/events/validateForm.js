@@ -4,7 +4,7 @@ function validateForm(form){
     
     if (formMode == "ADD" ) {
 		var dsRetorno = DatasetFactory.getDataset(
-				'DSCadastrarRequisitoTreinamento',
+				'DSCadastrarRequisitodeTreinamento',
 				null,
 				[   
                     DatasetFactory.createConstraint("metadata#active", true, true, ConstraintType.MUST),

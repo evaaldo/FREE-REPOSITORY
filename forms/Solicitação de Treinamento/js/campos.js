@@ -192,6 +192,12 @@ var Campos = {
     linhasTbParticipantes: function() {
         return $("#tbParticipante tbody tr");
     },
+
+    indicesParticipantes: function() {
+        return $("[id^='tbParticipanteIndice___']").map(function() {
+            return this.id;
+        }).get();
+    },
  
     // Campos de justificativa do treinamento
  
