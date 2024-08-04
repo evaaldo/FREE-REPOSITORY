@@ -114,39 +114,7 @@ var Campos = {
     },
 
     // Campos de dados do treinamento
- 
-    categoria: function() {
-        return $("#categoria");
-    },
-
-    tipo: function() {
-        return $("#tipo");
-    },
- 
-    optionRadioInterno: function() {
-        return $("#optionRadioInterno");
-    },
- 
-    optionRadioExterno: function() {
-        return $("#optionRadioExterno");
-    },
- 
-    optionRadioInCompany: function() {
-        return $("#optionRadioInCompany");
-    },
- 
-    optionRadioEAD: function() {
-        return $("#optionRadioEAD");
-    },
- 
-    optionRadioPresencial: function() {
-        return $("#optionRadioPresencial");
-    },
- 
-    optionRadioHibrido: function() {
-        return $("#optionRadioHibrido");
-    },
- 
+    
     nomeTreinamento: function() {
         return $("#nomeTreinamento");
     },
@@ -171,10 +139,34 @@ var Campos = {
         return $("#cargaHoraria");
     },
 
+    origem: function() {
+        return $("#origem")
+    },
+ 
+    modelo: function() {
+        return $("#modelo");
+    },
+
+    categoria: function() {
+        return $("#categoria");
+    },
+
+    tipo: function() {
+        return $("#tipo");
+    },  
+
     // Campos de informações dos participantes (Pai x Filho)
  
     escalaParticipantes: function() {
         return $("#escalaParticipantes");
+    },
+
+    planilhaParticipantes: function() {
+        return $("#planilhaParticipantes");
+    },
+
+    documentoNormativo: function() {
+        return $("#documentoNormativo");
     },
  
     anexo_planilhaParticipantes: function() {
@@ -227,20 +219,12 @@ var Campos = {
  
     // Campos de investimento
 
-    optionRadioViajar: function() {
-        return $("#optionRadioViajar");
+    necessarioViajar: function() {
+        return $("#necessarioViajar");
     },
  
-    optionRadioNaoViajar: function() {
-        return $("#optionRadioNaoViajar");
-    },
- 
-    optionRadioIndividual: function() {
-        return $("#optionRadioIndividual");
-    },
- 
-    optionRadioEmGrupo: function() {
-        return $("#optionRadioEmGrupo");
+    especificacao: function() {
+        return $("#especificacao");
     },
  
     valorPessoa: function() {

@@ -58,6 +58,14 @@ function enableFields(form){
         form.setEnabled("valorPessoa", true);
         form.setEnabled("valorTotal", true);
 
+        // Aprovar BP
+        form.setEnabled("aprovarBP", false)
+        form.setEnabled("observacaoBP", false)
+
+        // Aprovar Área Responsável
+        form.setEnabled("aprovarAreaResponsavel", false)
+        form.setEnabled("observacaoAreaResponsavel", false)
+
     } else if(/^(8)$/.test(numAtividade)) {
 
         // Aprovação da BP
@@ -76,17 +84,13 @@ function enableFields(form){
 
         // Dados do Treinamento
         form.setEnabled("nomeTreinamento", false);
-        form.setEnabled("optionRadioInterno",false);
-        form.setEnabled("optionRadioExterno",false);
-        form.setEnabled("optionRadioInCompany",false);
         form.setEnabled("nomeInstituicao", false);
         form.setEnabled("contatoInstituicao", false);
         form.setEnabled("inscricoes", false);
         form.setEnabled("dataTreinamento", false);
         form.setEnabled("cargaHoraria", false);
-        form.setEnabled("optionRadioEAD",false);
-        form.setEnabled("optionRadioPresencial",false);
-        form.setEnabled("optionRadioHibrido",false);
+        form.setEnabled("origem",false);
+        form.setEnabled("modelo",false);
         form.setEnabled("categoria", false);
         form.setEnabled("tipo", false);
 
@@ -108,10 +112,8 @@ function enableFields(form){
         form.setEnabled("anexo_conteudo_programatico", false);
         
         // Investimento
-        form.setEnabled("optionRadioViajar", false);
-        form.setEnabled("optionRadioNaoViajar", false);
-        form.setEnabled("optionRadioIndividual", false);
-        form.setEnabled("optionRadioEmGrupo", false);
+        form.setEnabled("necessarioViajar", false);
+        form.setEnabled("especificacao", false);
         form.setEnabled("valorPessoa", false);
         form.setEnabled("valorTotal", false);
         
@@ -137,17 +139,13 @@ function enableFields(form){
 
         // Dados do Treinamento
         form.setEnabled("nomeTreinamento", false);
-        form.setEnabled("optionRadioInterno",false);
-        form.setEnabled("optionRadioExterno",false);
-        form.setEnabled("optionRadioInCompany",false);
         form.setEnabled("nomeInstituicao", false);
         form.setEnabled("contatoInstituicao", false);
         form.setEnabled("inscricoes", false);
         form.setEnabled("dataTreinamento", false);
         form.setEnabled("cargaHoraria", false);
-        form.setEnabled("optionRadioEAD",false);
-        form.setEnabled("optionRadioPresencial",false);
-        form.setEnabled("optionRadioHibrido",false);
+        form.setEnabled("origem",false);
+        form.setEnabled("modelo",false);
         form.setEnabled("categoria", false);
         form.setEnabled("tipo", false);
 
@@ -169,13 +167,11 @@ function enableFields(form){
         form.setEnabled("anexo_conteudo_programatico", false);
         
         // Investimento
-        form.setEnabled("optionRadioViajar", false);
-        form.setEnabled("optionRadioNaoViajar", false);
-        form.setEnabled("optionRadioIndividual", false);
-        form.setEnabled("optionRadioEmGrupo", false);
+        form.setEnabled("necessarioViajar", false);
+        form.setEnabled("especificacao", false);
         form.setEnabled("valorPessoa", false);
         form.setEnabled("valorTotal", false);
-
+        
     } else if(/^(49)$/.test(numAtividade)) {
 
         // Definição de nível de treinamento
@@ -202,17 +198,13 @@ function enableFields(form){
 
         // Dados do Treinamento
         form.setEnabled("nomeTreinamento", false);
-        form.setEnabled("optionRadioInterno",false);
-        form.setEnabled("optionRadioExterno",false);
-        form.setEnabled("optionRadioInCompany",false);
         form.setEnabled("nomeInstituicao", false);
         form.setEnabled("contatoInstituicao", false);
         form.setEnabled("inscricoes", false);
         form.setEnabled("dataTreinamento", false);
         form.setEnabled("cargaHoraria", false);
-        form.setEnabled("optionRadioEAD",false);
-        form.setEnabled("optionRadioPresencial",false);
-        form.setEnabled("optionRadioHibrido",false);
+        form.setEnabled("origem",false);
+        form.setEnabled("modelo",false);
         form.setEnabled("categoria", false);
         form.setEnabled("tipo", false);
 
@@ -234,10 +226,8 @@ function enableFields(form){
         form.setEnabled("anexo_conteudo_programatico", false);
         
         // Investimento
-        form.setEnabled("optionRadioViajar", false);
-        form.setEnabled("optionRadioNaoViajar", false);
-        form.setEnabled("optionRadioIndividual", false);
-        form.setEnabled("optionRadioEmGrupo", false);
+        form.setEnabled("necessarioViajar", false);
+        form.setEnabled("especificacao", false);
         form.setEnabled("valorPessoa", false);
         form.setEnabled("valorTotal", false);
         
@@ -267,17 +257,13 @@ function enableFields(form){
 
         // Dados do Treinamento
         form.setEnabled("nomeTreinamento", false);
-        form.setEnabled("optionRadioInterno",false);
-        form.setEnabled("optionRadioExterno",false);
-        form.setEnabled("optionRadioInCompany",false);
         form.setEnabled("nomeInstituicao", false);
         form.setEnabled("contatoInstituicao", false);
         form.setEnabled("inscricoes", false);
         form.setEnabled("dataTreinamento", false);
         form.setEnabled("cargaHoraria", false);
-        form.setEnabled("optionRadioEAD",false);
-        form.setEnabled("optionRadioPresencial",false);
-        form.setEnabled("optionRadioHibrido",false);
+        form.setEnabled("origem",false);
+        form.setEnabled("modelo",false);
         form.setEnabled("categoria", false);
         form.setEnabled("tipo", false);
 
@@ -299,10 +285,8 @@ function enableFields(form){
         form.setEnabled("anexo_conteudo_programatico", false);
         
         // Investimento
-        form.setEnabled("optionRadioViajar", false);
-        form.setEnabled("optionRadioNaoViajar", false);
-        form.setEnabled("optionRadioIndividual", false);
-        form.setEnabled("optionRadioEmGrupo", false);
+        form.setEnabled("necessarioViajar", false);
+        form.setEnabled("especificacao", false);
         form.setEnabled("valorPessoa", false);
         form.setEnabled("valorTotal", false);
 

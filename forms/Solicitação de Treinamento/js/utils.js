@@ -1,4 +1,25 @@
 var Utils = {
+
+    UrlAmbienteAtual: function() {
+        var ambientes_tabelas = {
+            "dev"  : "https://fluigdev.santaclara.com.br/",
+            "qa"   : "https://fluigqa.santaclara.com.br",
+            "prod" : "https://fluig.3coracoes.com.br/"
+        }
+
+        var tabela  = ambientes_tabelas["prod"];
+
+        var hostname = window.location.href;
+
+        for(var ambiente in ambientes_tabelas){
+            var regex = new RegExp(ambiente);
+            if (regex.test(hostname)) {
+                tabela = ambientes_tabelas[ambiente];
+                break;
+            }
+        }
+        return tabela;
+    },
     
     desabilitarRadio: function(idRadioLabel) {
         var radio = $("#" + idRadioLabel);
@@ -33,6 +54,6 @@ var Utils = {
     exibirAlerta: function(iconePersonalizado, tituloPersonalizado, textoPersonalizado) {
         AlertaCustomizadoX = new AlertaCustomizado(iconePersonalizado,tituloPersonalizado,textoPersonalizado,'');
         AlertaCustomizadoX.exibeAlerta1();
-    }
+    },
 
 }

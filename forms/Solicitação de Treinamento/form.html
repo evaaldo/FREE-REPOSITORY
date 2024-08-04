@@ -5,12 +5,13 @@
 	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
 	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
-	<script type="text/javascript" src="./js/custom.js"></script>
+	<script type="text/javascript" src="./js/validate.js"></script>
 	<script type="text/javascript" src="./js/dataset.js"></script>
 	<script type="text/javascript" src="./js/atividades.js"></script>
 	<script type="text/javascript" src="./js/utils.js"></script>
 	<script type="text/javascript" src="./js/form.js"></script>
 	<script type="text/javascript" src="./js/campos.js"></script>
+	<script type="text/javascript" src="./js/classes.js"></script>
 	<script type="text/javascript" src="./js/colaborador.js"></script>
 	<script type="text/javascript" src="./js/anexos.js"></script>
 	<script type="text/javascript" src="./js/beforeSendValidate.js" defer></script>
@@ -103,7 +104,7 @@
 						<h3 class="panel-title text-center">SOLICITAÇÃO DE TREINAMENTO</h3>
 					</div>
 					<div class="panel-body">
-						<div class="panel-group collapse-black" id="collapse-parent">
+						<div class="panel-group collapse-orange" id="collapse-parent">
 							<div class="panel panel-info" data-toggle="collapse" data-parent="#collapse-parent" id="painelInfosGerais">
 								<div class="panel-heading">
 									<h4 class="panel-title">
@@ -117,16 +118,16 @@
 								<div id="collapseInfosGerais" class="panel-collapse collapse in">
 									<div class="panel-body">
 										<div class="row">
-											<div class="form-group col-sm-3">
-												<label class="control-label" for="matriculaGestorArea">Matrícula do Gestor da área <i style="color: red;">*</i></label>
+											<div class="form-group col-sm-3 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+												<label class="control-label" for="matriculaGestorArea">Matrícula do Gestor da área</label>
 												<input class="form-control" type="text" id="matriculaGestorArea" name="matriculaGestorArea" placeholder="Ex: 1-10226" mask="0-00000" onblur="Colaboradores.preencherDadosGestor()">
 											</div>
-											<div class="form-group col-sm-6">
-												<label class="control-label" for="bpRhResponsavel">BP/RH Responsável <i style="color: red;">*</i></label>
+											<div class="form-group col-sm-6 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+												<label class="control-label" for="bpRhResponsavel">BP/RH Responsável</label>
 												<input class="form-control" type="text" id="bpRhResponsavel" name="bpRhResponsavel" readonly>
 											</div>
-											<div class="form-group col-sm-3">
-												<label class="control-label" for="areaSolicitante">Área solicitante <i style="color: red;">*</i></label>
+											<div class="form-group col-sm-3 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+												<label class="control-label" for="areaSolicitante">Área solicitante</label>
 												<br>
 												<div class="controls">
 													<input class="form-control awesomplete" type="text" id="areaSolicitante" name="areaSolicitante" placeholder="Ex: Treinamentos" onblur="Formulario.verificaExistenciaArea(this)"/>
@@ -134,20 +135,20 @@
 											</div>	
 										</div>
 										<div class="row">
-											<div class="form-group col-sm-3">
-												<label class="control-label" for="matriculaSolicitante">Matrícula do solicitante <i style="color: red;">*</i></label>
+											<div class="form-group col-sm-3 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+												<label class="control-label" for="matriculaSolicitante">Matrícula do solicitante</label>
 												<input class="form-control" type="text" id="matriculaSolicitante" name="matriculaSolicitante" placeholder="Ex: 1-10226" mask="0-00000" onblur="Colaboradores.preencherDadosSolicitante()">
 											</div>
-											<div class="form-group col-sm-3">
-												<label class="control-label" for="gestorImediato">Nome do gestor imediato <i style="color: red;">*</i></label>
+											<div class="form-group col-sm-3 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+												<label class="control-label" for="gestorImediato">Nome do gestor imediato</label>
 												<input class="form-control" type="text" id="gestorImediato" name="gestorImediato" readonly>
 											</div>
-											<div class="form-group col-sm-3">
-												<label class="control-label" for="unidade">Unidade <i style="color: red;">*</i></label>
+											<div class="form-group col-sm-3 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+												<label class="control-label" for="unidade">Unidade</label>
 												<input class="form-control" type="text" id="unidade" name="unidade" readonly>
 											</div>
-											<div class="form-group col-sm-3">
-												<label class="control-label" for="diretoria">Diretoria <i style="color: red;">*</i></label>
+											<div class="form-group col-sm-3 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+												<label class="control-label" for="diretoria">Diretoria</label>
 												<input class="form-control" type="text" id="diretoria" name="diretoria" readonly>
 											</div>
 										</div>
@@ -157,7 +158,7 @@
 							<div class="panel panel-info" data-toggle="collapse" data-parent="#collapse-parent" id="painelDadosTreinamento">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a class="collapse-icon up" data-toggle="collapse" data-parent="#collapse-parent" href="#collapseDadosTreinamento">
+										<a class="collapse-icon" data-toggle="collapse" data-parent="#collapse-parent" href="#collapseDadosTreinamento">
 											<strong>
 												Dados do Treinamento
 											</strong>
@@ -167,94 +168,60 @@
 								<div id="collapseDadosTreinamento" class="panel-collapse collapse">
 									<div class="panel-body">
 										<div class="row">
-											<div class="form-group col-sm-4">
-												<label class="control-label" for="nomeTreinamento">Nome do treinamento <i style="color: red;">*</i></label>
+											<div class="form-group col-sm-4 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+												<label class="control-label" for="nomeTreinamento">Nome do treinamento</label>
 												<input class="form-control" type="text" id="nomeTreinamento" name="nomeTreinamento" placeholder="Ex: Treinamento de gestão de processos">
 											</div>
-											<div class="form-group col-sm-4">
-												<label class="control-label" for="nomeInstituicao">Nome da instituição <i style="color: red;">*</i></label>
+											<div class="form-group col-sm-4 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+												<label class="control-label" for="nomeInstituicao">Nome da instituição</label>
 												<input class="form-control" type="text" id="nomeInstituicao" name="nomeInstituicao" placeholder="Ex: MIT">
 											</div>
-											<div class="form-group col-sm-4">
-												<label class="control-label" for="contatoInstituicao">Contato da instituição <i style="color: red;">*</i></label>
+											<div class="form-group col-sm-4 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+												<label class="control-label" for="contatoInstituicao">Contato da instituição</label>
 												<input class="form-control" type="text" id="contatoInstituicao" name="contatoInstituicao" placeholder="Link do site oficial, rede social ou telefone para contato">
 											</div>
 										</div>
 										<div class="row">
-											<div class="form-group col-sm-4">
-												<label class="control-label" for="inscricoes">Inscrições até: <i style="color: red;">*</i></label>
+											<div class="form-group col-sm-4 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+												<label class="control-label" for="inscricoes">Inscrições até:</label>
 												<input class="form-control" type="text" id="inscricoes" name="inscricoes" placeholder="Ex: 25/03/2024" mask="00/00/0000">
 											</div>
-											<div class="form-group col-sm-4">
-												<label class="control-label" for="dataTreinamento">Data do treinamento <i style="color: red;">*</i></label>
+											<div class="form-group col-sm-4 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+												<label class="control-label" for="dataTreinamento">Data do treinamento</label>
 												<input class="form-control" type="text" id="dataTreinamento" name="dataTreinamento" placeholder="Ex: 15/04/2024" mask="00/00/0000">
 											</div>
-											<div class="form-group col-sm-4">
-												<label class="control-label" for="cargaHoraria">Carga horária <i style="color: red;">*</i></label>
+											<div class="form-group col-sm-4 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+												<label class="control-label" for="cargaHoraria">Carga horária</label>
 												<input class="form-control" type="text" id="cargaHoraria" name="cargaHoraria" placeholder="Ex: 15 horas">
 											</div>
 										</div>
 										<div class="row">
-											<div class="form-group col-sm-3">
-												<label class="control-label" for="origem">Origem <i style="color: red;">*</i></label>
+											<div class="form-group col-sm-3 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+												<label class="control-label" for="origem">Origem</label>
 												<select class="form-control" id="origem" name="origem" addblankline="true">
+													<option value=""></option>
 													<option value="interno">Interno (baixa complexidade)</option>
 													<option value="externo">Externo (média complexidade)</option>
 													<option value="inCompany">In Company (alta complexidade)</option>
 												</select>
 											</div>
-											<div class="form-group col-sm-3">
-												<label class="control-label">Origem <i style="color: red;">*</i></label>
-												<div class="radio">
-													<label class="control-label" for="optionRadioInterno" id="optionRadioInternoLbl">
-														<input type="radio" name="optionRadioOrigem" id="optionRadioInterno" value="interno">
-														Interno (baixa complexidade)
-													</label>
-												</div>
-												<div class="radio">
-													<label class="control-label" for="optionRadioExterno" id="optionRadioExternoLbl">
-														<input type="radio" name="optionRadioOrigem" id="optionRadioExterno" value="externo">
-														Externo (média complexidade)
-													</label>
-												</div>
-												<div class="radio">
-													<label class="control-label" for="optionRadioInCompany" id="optionRadioIncompanyLbl">
-														<input type="radio" name="optionRadioOrigem" id="optionRadioInCompany" value="inCompany">
-														In Company (alta complexidade)
-													</label>
-												</div>
-											</div>
-											<div class="form-group col-sm-3">
-												<label class="control-label">Modelo <i style="color: red;">*</i></label>
-												<div class="radio">
-													<label class="control-label" for="optionRadioEAD" id="optionRadioEADLbl">
-														<input type="radio" name="optionRadioModelo" id="optionRadioEAD" value="ead">
-														EAD
-													</label>
-												</div>
-												<div class="radio">
-													<label class="control-label" for="optionRadioPresencial" id="optionRadioPresencialLbl">
-														<input type="radio" name="optionRadioModelo" id="optionRadioPresencial" value="presencial">
-														Presencial
-													</label>
-												</div>
-												<div class="radio">
-													<label class="control-label" for="optionRadioHibrido" id="optionRadioHibridoLbl">
-														<input type="radio" name="optionRadioModelo" id="optionRadioHibrido" value="hibrido">
-														Híbrido
-													</label>
-												</div>
-											</div>
-											<div class="form-group col-sm-3">
-												<label class="control-label" for="categoria">Categoria <i style="color: red;">*</i></label>
-												<select class="form-control" id="categoria" name="categoria" dataset="DSCadastrarCategoriadeTreinamento" datasetkey="categoria" datasetvalue="categoria" addblankline="true">
-													<option value="">Selecione..</option>
+											<div class="form-group col-sm-3 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+												<label class="control-label" for="modelo">Modelo</label>
+												<select class="form-control" id="modelo" name="modelo" addblankline="true">
+													<option value=""></option>
+													<option value="ead">EAD</option>
+													<option value="presencial">Presencial</option>
+													<option value="hibrido">Híbrido</option>
 												</select>
 											</div>
-											<div class="form-group col-sm-3">
-												<label class="control-label" for="tipo">Tipo <i style="color: red;">*</i></label>
+											<div class="form-group col-sm-3 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+												<label class="control-label" for="categoria">Categoria</label>
+												<select class="form-control" id="categoria" name="categoria" dataset="DSCadastrarCategoriadeTreinamento" datasetkey="categoria" datasetvalue="categoria" addblankline="true">
+												</select>
+											</div>
+											<div class="form-group col-sm-3 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+												<label class="control-label" for="tipo">Tipo</label>
 												<select class="form-control" id="tipo" name="tipo" dataset="DSCadastrarTipodeTreinamento" datasetkey="tipo" datasetvalue="tipo" addblankline="true">
-													<option value="">Selecione..</option>
 												</select>
 											</div>
 										</div>
@@ -264,7 +231,7 @@
 							<div class="panel panel-info" data-toggle="collapse" data-parent="#collapse-parent" id="painelInfosParticipantes">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a class="collapse-icon up" data-toggle="collapse" data-parent="#collapse-parent" href="#collapseInfosParticipantes">
+										<a class="collapse-icon" data-toggle="collapse" data-parent="#collapse-parent" href="#collapseInfosParticipantes">
 											<strong>
 												Informações dos Participantes
 											</strong>
@@ -289,8 +256,8 @@
 												</div>
 											</div>
 											<div class="row">
-												<div class="form-group col-sm-3">
-													<label for="escalaParticipantes" class="control-label">Escala de participantes <i style="color: red;">*</i></label>
+												<div class="form-group col-sm-3 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+													<label for="escalaParticipantes" class="control-label">Escala de participantes</label>
 													<select class="form-control" id="escalaParticipantes" name="escalaParticipantes" onchange="Formulario.definirEscalaParticipantes(this.value)">
 														<option value="">Selecione...</option>
 														<option value="maisCincoParticipantes">Mais de 5 participantes</option>
@@ -305,8 +272,8 @@
 													<label class="control-label">Quantidade máxima: 5</label>
 													<button id="removerTodosParticipante" class="btn btn-danger btn-block" onclick="Formulario.excluirTodasLinhas();"><i class="flaticon flaticon-cancel icon-xs" aria-hidden="true"></i> Remover Todos</button>
 												</div>
-												<div class="form-group col-sm-2" id="divAdicionarPlanilhaParticipantes" style="display: none;">
-													<label class="control-label" for="planilhaParticipantes">Planilha de participantes <i style="color: red;">*</i></label>
+												<div class="form-group col-sm-2 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64" id="divAdicionarPlanilhaParticipantes" style="display: none;">
+													<label class="control-label" id="planilhaParticipantesLbl" for="planilhaParticipantes">Planilha de participantes</label>
 													<div class="componentAnexo">
 														<div class="input-group">
 															<input type="hidden" id="anexo_planilhaParticipantes" class="descAnexo" name="anexo_planilhaParticipantes" value="Planilha de participantes" />
@@ -325,8 +292,8 @@
 														</div>
 													</div>
 												</div>
-												<div class="form-group col-sm-2" id="divAdicionarDocumentoNormativo" style="display: none;">
-													<label class="control-label" for="documentoNormativo">Documento normativo <i style="color: red;">*</i></label>
+												<div class="form-group col-sm-2 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64" id="divAdicionarDocumentoNormativo" style="display: none;">
+													<label class="control-label" id="documentoNormativoLbl" for="documentoNormativo">Documento normativo</label>
 													<div class="componentAnexo">
 														<div class="input-group">
 															<input type="hidden" id="anexo_documentoNormativo" class="descAnexo" name="anexo_documentoNormativo" value="Documento Normativo" />
@@ -358,47 +325,47 @@
 															<td>
 																<div class="row">
 																	<div class="form-group col-sm-3">
-																		<label class="control-label" for="tbParticipanteIndice">Índice <i style="color: red;">*</i></label>
+																		<label class="control-label" for="tbParticipanteIndice">Índice</label>
 																		<input class="form-control" type="text" id="tbParticipanteIndice" name="tbParticipanteIndice" readonly>
 																	</div>
 																	<div class="form-group col-sm-3">
-																		<label class="control-label" for="tbParticipanteMatricula">Matrícula do participante <i style="color: red;">*</i></label>
+																		<label class="control-label" for="tbParticipanteMatricula">Matrícula do participante</label>
 																		<input class="form-control" type="text" id="tbParticipanteMatricula" name="tbParticipanteMatricula" placeholder="Ex: 1-10226" mask="0-00000" onblur="Colaboradores.preencherDadosParticipante(this.id)">
 																	</div>
 																	<div class="form-group col-sm-3">
-																		<label class="control-label" for="tbParticipanteNome">Nome do participante <i style="color: red;">*</i></label>
+																		<label class="control-label" for="tbParticipanteNome">Nome do participante</label>
 																		<input class="form-control" type="text" id="tbParticipanteNome" name="tbParticipanteNome" readonly>
 																	</div>
 																	<div class="form-group col-sm-3">
-																		<label class="control-label" for="tbParticipanteCargo">Cargo <i style="color: red;">*</i></label>
+																		<label class="control-label" for="tbParticipanteCargo">Cargo</label>
 																		<input class="form-control" type="text" id="tbParticipanteCargo" name="tbParticipanteCargo" readonly>
 																	</div>
 																</div>
 																<div class="row">
 																	<div class="form-group col-sm-3">
-																		<label class="control-label" for="tbParticipanteAdmissao">Data de admissão <i style="color: red;">*</i></label>
+																		<label class="control-label" for="tbParticipanteAdmissao">Data de admissão</label>
 																		<input class="form-control" type="text" id="tbParticipanteAdmissao" name="tbParticipanteAdmissao" mask="00/00/0000" readonly>
 																	</div>
 																	<div class="form-group col-sm-3">
-																		<label class="control-label" for="tbParticipanteSituacao">Situação <i style="color: red;">*</i></label>
+																		<label class="control-label" for="tbParticipanteSituacao">Situação</label>
 																		<input class="form-control" type="text" id="tbParticipanteSituacao" name="tbParticipanteSituacao" readonly>
 																	</div>
 																	<div class="form-group col-sm-3">
-																		<label class="control-label" for="tbParticipanteTempoEmpresa">Tempo de empresa <i style="color: red;">*</i></label>
+																		<label class="control-label" for="tbParticipanteTempoEmpresa">Tempo de empresa</label>
 																		<input class="form-control" type="text" id="tbParticipanteTempoEmpresa" name="tbParticipanteTempoEmpresa" readonly>
 																	</div>
 																	<div class="form-group col-sm-3">
-																		<label class="control-label" for="tbParticipanteADC">Nota última ADC <i style="color: red;">*</i></label>
+																		<label class="control-label" for="tbParticipanteADC">Nota última ADC</label>
 																		<input class="form-control" type="text" id="tbParticipanteADC" name="tbParticipanteADC" placeholder="Ex: Última ADC">
 																	</div>
 																</div>
 																<div class="row">
 																	<div class="form-group col-sm-9">
-																		<label class="control-label" for="tbParticipanteAderenciaSaber">Aderência Plataforma SABER <i style="color: red;">*</i></label>
+																		<label class="control-label" for="tbParticipanteAderenciaSaber">Aderência Plataforma SABER</label>
 																		<textarea class="form-control" name="tbParticipanteAderenciaSaber" id="tbParticipanteAderenciaSaber" rows="8" placeholder="Ex: Uso recorrente da plataforma SABER para cursos técnicos"></textarea>
 																	</div>
 																	<div class="form-group col-sm-3">
-																		<label class="control-label" for="tbParticipantePDI">PDI <i style="color: red;">*</i></label>
+																		<label class="control-label" for="tbParticipantePDI">PDI</label>
 																		<input class="form-control" type="text" id="tbParticipantePDI" name="tbParticipantePDI" placeholder="Ex: PDI">
 																	</div>
 																</div>
@@ -419,7 +386,7 @@
 							<div class="panel panel-info" data-toggle="collapse" data-parent="#collapse-parent" id="painelJustificativaTreinamento">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a class="collapse-icon up" data-toggle="collapse" data-parent="#collapse-parent" href="#collapseJustificativaTreinamento">
+										<a class="collapse-icon" data-toggle="collapse" data-parent="#collapse-parent" href="#collapseJustificativaTreinamento">
 											<strong>
 												Justificativa do Treinamento
 											</strong>
@@ -430,21 +397,23 @@
 									<div class="panel-body">
 										<div class="panel-body">
 											<div class="row">
-												<div class="form-group col-sm-6">
-													<label for="requisito" class="control-label">Requisitos <i style="color: red;">*</i></label>
+												<div class="form-group col-sm-6 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+													<label for="requisito" class="control-label">Requisitos</label>
 													<select class="form-control" id="requisito" name="requisito" dataset="DSCadastrarRequisitodeTreinamento" datasetkey="requisito" datasetvalue="requisito" addblankline="true">
 														<option value="">Selecione...</option>
 													</select>
 												</div>
-												<div class="form-group col-sm-6">
-													<label class="control-label" for="justificativa">Justificativa <i style="color: red;">*</i></label>
+												<div class="form-group col-sm-6 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+													<label class="control-label" for="justificativa">Justificativa</label>
 													<textarea class="form-control" type="text" id="justificativa" name="justificativa" rows="8" placeholder="Ex: Ganhos para a área, resultados esperados com o treinamento e indicadores impactados"></textarea>
 												</div>
 											</div>
 											<div class="row">
 												<div class="form-group col-sm-6">
-													<label class="control-label" for="conteudoProgramaticoDescricao">Conteúdo Programático <i style="color: red;">*</i></label>
-													<textarea class="form-control" type="text" id="conteudoProgramaticoDescricao" name="conteudoProgramaticoDescricao" rows="8" placeholder="Ex: Incluir Programação"></textarea>
+													<div class="obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+														<label class="control-label" for="conteudoProgramaticoDescricao">Conteúdo Programático</label>
+														<textarea class="form-control" type="text" id="conteudoProgramaticoDescricao" name="conteudoProgramaticoDescricao" rows="8" placeholder="Ex: Incluir Programação"></textarea>
+													</div>
 													<div class="componentAnexo">
 														<div class="input-group">
 															<input type="hidden" id="anexo_conteudo_programatico" class="descAnexo" name="anexo_conteudo_programatico" value="Doc. Conteúdo Programático" />
@@ -464,8 +433,10 @@
 													</div>
 												</div>
 												<div class="form-group col-sm-6">
-													<label class="control-label" for="programacaoEventoDescricao">Programação do evento <i style="color: red;">*</i></label>
-													<textarea class="form-control" type="text" id="programacaoEventoDescricao" name="programacaoEventoDescricao" rows="8" placeholder="Descrever a programação do evento"></textarea>
+													<div class="obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+														<label class="control-label" for="programacaoEventoDescricao">Programação do evento</label>
+														<textarea class="form-control" type="text" id="programacaoEventoDescricao" name="programacaoEventoDescricao" rows="8" placeholder="Descrever a programação do evento"></textarea>
+													</div>
 													<div class="componentAnexo">
 														<div class="input-group">
 															<input type="hidden" id="anexo_programacao_evento" class="descAnexo" name="anexo_programacao_evento" value="Doc. Programação do Evento" />
@@ -492,7 +463,7 @@
 							<div class="panel panel-info" data-toggle="collapse" data-parent="#collapse-parent" id="painelInvestimento">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a class="collapse-icon up" data-toggle="collapse" data-parent="#collapse-parent" href="#collapseInvestimento">
+										<a class="collapse-icon" data-toggle="collapse" data-parent="#collapse-parent" href="#collapseInvestimento">
 											<strong>
 												Investimento
 											</strong>
@@ -503,42 +474,28 @@
 									<div class="panel-body">
 										<div class="panel-body">
 											<div class="row">
-												<div class="form-group col-sm-3">
-													<label class="control-label">Necessário viajar? <i style="color: red;">*</i></label>
-													<br>
-													<div class="radio-inline">
-														<label class="control-label" for="optionRadioViajar" id="optionRadioViajarLbl">
-															<input type="radio" name="optionRadioViagem" id="optionRadioViajar" value="viajar">Sim
-														</label>
-													</div>
-													<br>
-													<div class="radio-inline">
-														<label class="control-label" for="optionRadioNaoViajar" id="optionRadioNaoViajarLbl">
-															<input type="radio" name="optionRadioViagem" id="optionRadioNaoViajar" value="naoViajar">Não
-														</label>
-													</div>
+												<div class="form-group col-sm-3 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+													<label class="control-label" for="necessarioViajar">Necessário viajar?</label>
+													<select class="form-control" id="necessarioViajar" name="necessarioViajar" addblankline="true">
+														<option value=""></option>
+														<option value="viajar">Sim</option>
+														<option value="naoViajar">Não</option>
+													</select>
 												</div>
-												<div class="form-group col-sm-3">
-													<label class="control-label">Especificação: <i style="color: red;">*</i></label>
-													<br>
-													<div class="radio-inline">
-														<label class="control-label" for="optionRadioIndividual" id="optionRadioIndividualLbl">
-															<input type="radio" name="optionRadioEspecificacao" id="optionRadioIndividual" value="individual">Individual
-														</label>
-													</div>
-													<br>
-													<div class="radio-inline">
-														<label class="control-label" for="optionRadioEmGrupo" id="optionRadioEmGrupoLbl">
-															<input type="radio" name="optionRadioEspecificacao" id="optionRadioEmGrupo" value="emGrupo">Em grupo
-														</label>
-													</div>
+												<div class="form-group col-sm-3 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+													<label class="control-label" for="especificacao">Especificação:</label>
+													<select class="form-control" id="especificacao" name="especificacao" addblankline="true">
+														<option value=""></option>
+														<option value="individual">Individual</option>
+														<option value="emGrupo">Em grupo</option>
+													</select>
 												</div>
-												<div class="form-group col-sm-3">
-													<label class="control-label" for="valorPessoa">Valor por pessoa <i style="color: red;">*</i></label>
+												<div class="form-group col-sm-3 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+													<label class="control-label" for="valorPessoa">Valor por pessoa</label>
 													<input class="form-control" type="text" id="valorPessoa" name="valorPessoa" placeholder="Ex: 50,00">
 												</div>
-												<div class="form-group col-sm-3">
-													<label class="control-label" for="valorTotal">Valor total <i style="color: red;">*</i></label>
+												<div class="form-group col-sm-3 obrigatorio0 obrigatorio7 obrigatorio61 obrigatorio64">
+													<label class="control-label" for="valorTotal">Valor total</label>
 													<input class="form-control" type="text" id="valorTotal" name="valorTotal" placeholder="Ex: 500,00">
 												</div>
 											</div>
@@ -549,7 +506,7 @@
 							<div class="panel panel-info" data-toggle="collapse" data-parent="#collapse-parent" id="painelAprvBP">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a class="collapse-icon up" data-toggle="collapse" data-parent="#collapse-parent" href="#collapseAprvBP">
+										<a class="collapse-icon" data-toggle="collapse" data-parent="#collapse-parent" href="#collapseAprvBP">
 											<strong>
 												Aprovação - BP
 											</strong>
@@ -559,8 +516,8 @@
 								<div id="collapseAprvBP" class="panel-collapse collapse">
 									<div class="panel-body">
 										<div class="row">
-											<div class="form-group col-sm-4">
-												<label class="control-label" for="aprovarBP">Aprovação <i style="color: red;">*</i></label>
+											<div class="form-group col-sm-4 obrigatorio8">
+												<label class="control-label" for="aprovarBP">Aprovação</label>
 												<select class="form-control" name="aprovarBP" id="aprovarBP">
 													<option value="">Selecione..</option>
 													<option value="aprovadoBP">Aprovado</option>
@@ -568,8 +525,8 @@
 													<option value="necessitaAjustesBP">Necessita de ajustes</option>
 												</select>
 											</div>
-											<div class="form-group col-sm-8">
-												<label class="control-label" for="observacaoBP">Observações <i style="color: red;">*</i></label>
+											<div class="form-group col-sm-8 obrigatorio8">
+												<label class="control-label" for="observacaoBP">Observações</label>
 												<textarea class="form-control" name="observacaoBP" id="observacaoBP" rows="8" placeholder="Ex: Descrever parecer ou justificativa de aprovação"></textarea>
 											</div>
 										</div>
@@ -579,7 +536,7 @@
 							<div class="panel panel-info" data-toggle="collapse" data-parent="#collapse-parent" id="painelAprvAreaResponsavel">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a class="collapse-icon up" data-toggle="collapse" data-parent="#collapse-parent" href="#collapseAreaResponsavel">
+										<a class="collapse-icon" data-toggle="collapse" data-parent="#collapse-parent" href="#collapseAreaResponsavel">
 											<strong>
 												Aprovação - Área Responsável
 											</strong>
@@ -590,8 +547,8 @@
 									<div class="panel-body">
 										<div class="panel-body">
 											<div class="row">
-												<div class="form-group col-sm-4">
-													<label class="control-label" for="aprovarAreaResponsavel">Aprovação <i style="color: red;">*</i></label>
+												<div class="form-group col-sm-4 obrigatorio10">
+													<label class="control-label" for="aprovarAreaResponsavel">Aprovação</label>
 													<select class="form-control" name="aprovarAreaResponsavel" id="aprovarAreaResponsavel">
 														<option value="">Selecione..</option>
 														<option value="aprovadoAreaResponsavel">Aprovado</option>
@@ -599,8 +556,8 @@
 														<option value="necessitaAjustesAreaResponsavel">Necessita de ajustes</option>
 													</select>
 												</div>
-												<div class="form-group col-sm-8">
-													<label class="control-label" for="observacaoAreaResponsavel">Observações <i style="color: red;">*</i></label>
+												<div class="form-group col-sm-8 obrigatorio10">
+													<label class="control-label" for="observacaoAreaResponsavel">Observações</label>
 													<textarea class="form-control" name="observacaoAreaResponsavel" id="observacaoAreaResponsavel" rows="8" placeholder="Ex: Descrever parecer ou justificativa de aprovação"></textarea>
 												</div>
 											</div>
@@ -611,7 +568,7 @@
 							<div class="panel panel-info" data-toggle="collapse" data-parent="#collapse-parent" id="painelNivelTreinamento">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a class="collapse-icon up" data-toggle="collapse" data-parent="#collapse-parent" href="#collapseNivelTreinamento">
+										<a class="collapse-icon" data-toggle="collapse" data-parent="#collapse-parent" href="#collapseNivelTreinamento">
 											<strong>
 												Definição do Nível de Treinamento
 											</strong>
@@ -622,8 +579,8 @@
 									<div class="panel-body">
 										<div class="panel-body">
 											<div class="row">
-												<div class="form-group col-sm-4">
-													<label class="control-label" for="nivelTreinamento">Nível de Treinamento <i style="color: red;">*</i></label>
+												<div class="form-group col-sm-4 obrigatorio49">
+													<label class="control-label" for="nivelTreinamento">Nível de Treinamento</label>
 													<select class="form-control" name="nivelTreinamento" id="nivelTreinamento">
 														<option value="">Selecione..</option>
 														<option value="treinamentoTecnico">Treinamento Técnico</option>
@@ -631,8 +588,8 @@
 														<option value="treinamentoLideranca">Treinamento de Liderança</option>
 													</select>
 												</div>
-												<div class="form-group col-sm-8">
-													<label class="control-label" for="observacaoNivelTreinamento">Observações <i style="color: red;">*</i></label>
+												<div class="form-group col-sm-8 obrigatorio49">
+													<label class="control-label" for="observacaoNivelTreinamento">Observações</label>
 													<textarea class="form-control" name="observacaoNivelTreinamento" id="observacaoNivelTreinamento" rows="8" placeholder="Ex: Descrever parecer..."></textarea>
 												</div>
 											</div>
@@ -643,7 +600,7 @@
 							<div class="panel panel-info" data-toggle="collapse" data-parent="#collapse-parent" id="painelCorrecaoNotificacao">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a class="collapse-icon up" data-toggle="collapse" data-parent="#collapse-parent" href="#collapseCorrecaoNotificacao">
+										<a class="collapse-icon" data-toggle="collapse" data-parent="#collapse-parent" href="#collapseCorrecaoNotificacao">
 											<strong>
 												[NOTIFICAÇÃO DA ÁREA] Correção de Erros
 											</strong>
@@ -655,7 +612,7 @@
 										<div class="panel-body">
 											<div class="row">
 												<div class="form-group col-sm-4">
-													<label class="control-label" for="envioCorrecao">Enviar novamente <i style="color: red;">*</i></label>
+													<label class="control-label" for="envioCorrecao">Enviar novamente</label>
 													<select class="form-control" name="envioCorrecao" id="envioCorrecao">
 														<option value="">Selecione..</option>
 														<option value="novaNotificacao">Sim</option>
@@ -663,7 +620,7 @@
 													</select>
 												</div>
 												<div class="form-group col-sm-8">
-													<label class="control-label" for="envioCorrecaoObservacao">Observações <i style="color: red;">*</i></label>
+													<label class="control-label" for="envioCorrecaoObservacao">Observações</label>
 													<textarea class="form-control" name="envioCorrecaoObservacao" id="envioCorrecaoObservacao" rows="8" placeholder="Ex: Nova tentativa de notificação..."></textarea>
 												</div>
 											</div>
